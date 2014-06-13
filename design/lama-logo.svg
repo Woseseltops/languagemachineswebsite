@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg3139"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="lama-logo.svg">
+  <defs
+     id="defs3141">
+    <radialGradient
+       id="radialGradient3262"
+       gradientUnits="userSpaceOnUse"
+       cy="39.160999"
+       cx="25.455999"
+       gradientTransform="matrix(1,0,0,0.31532,0,26.813)"
+       r="19.622">
+      <stop
+         id="stop3258"
+         offset="0" />
+      <stop
+         id="stop3260"
+         stop-opacity="0"
+         offset="1" />
+    </radialGradient>
+    <linearGradient
+       id="linearGradient3281"
+       x1="14.463"
+       gradientUnits="userSpaceOnUse"
+       y1="12.285"
+       gradientTransform="matrix(1.2419,0,0,1.2419,-5.0275,-7.209)"
+       x2="34.534"
+       y2="39.685001">
+      <stop
+         id="stop3266"
+         stop-color="#c9c9c9"
+         offset="0" />
+      <stop
+         id="stop3276"
+         stop-color="#f8f8f8"
+         offset=".25" />
+      <stop
+         id="stop3272"
+         stop-color="#e2e2e2"
+         offset=".5" />
+      <stop
+         id="stop3274"
+         stop-color="#b0b0b0"
+         offset=".75" />
+      <stop
+         id="stop3268"
+         stop-color="#c9c9c9"
+         offset="1" />
+    </linearGradient>
+    <filter
+       id="filter3561"
+       inkscape:label="Fancy blur"
+       inkscape:menu="Blurs"
+       inkscape:menu-tooltip="Smooth colorized contour which allows desaturation and hue rotation"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur3563"
+         stdDeviation="5"
+         result="result1" />
+      <feComposite
+         id="feComposite3565"
+         in2="result1"
+         operator="arithmetic"
+         k2="2"
+         in="result1" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="377.21251"
+     inkscape:cy="646.01965"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1039"
+     inkscape:window-x="0"
+     inkscape:window-y="18"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3144">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       transform="matrix(1.6267955,0,0,1.5910081,96.378765,507.95354)"
+       id="layer1-4"
+       inkscape:export-filename="/home/proycon/work/lama-logo.png"
+       inkscape:export-xdpi="218"
+       inkscape:export-ydpi="218">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3254"
+         style="opacity:0.40909005;color:#000000;fill:url(#radialGradient3262)"
+         d="m 45.078,39.161 a 19.622,6.1872 0 1 1 -39.244,0 19.622,6.1872 0 1 1 39.244,0 z"
+         transform="translate(-0.88388,2.4749)" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3243"
+         style="color:#000000;fill:url(#linearGradient3281);stroke:#808080"
+         d="M 23.25,0.46875 C 22.785,0.5006 22.332,0.57268 21.875,0.625 H 21.844 L 20.75,6.5938 C 18.967,6.9997 17.29,7.6887 15.781,8.625 L 10.875,5.0938 C 9.5487,6.1234 8.3418,7.3243 7.2812,8.625 l 3.4068,4.969 c -1.0347,1.58 -1.8125,3.385 -2.2505,5.281 -10e-5,0.009 -10e-5,0.03 0,0.031 L 2.5,19.844 c -0.1086,0.886 -0.1562,1.803 -0.1562,2.718 0,0.75 0.0206,1.489 0.0937,2.219 l 5.9375,1.063 c 0.4223,2.062 1.2245,3.987 2.344,5.687 l -3.5315,4.844 c 1.0113,1.256 2.1789,2.399 3.4375,3.406 l 5,-3.437 c 1.747,1.114 3.698,1.896 5.813,2.281 l 0.937,5.906 c 0.666,0.061 1.349,0.063 2.031,0.063 0.963,0 1.882,-0.037 2.813,-0.156 l 1.125,-6.032 c 2.007,-0.499 3.893,-1.366 5.531,-2.531 l 4.813,3.5 c 1.248,-1.062 2.389,-2.282 3.374,-3.594 l -3.5,-5.062 c 0.948,-1.637 1.605,-3.443 1.938,-5.375 l 5.906,-0.938 c 0.052,-0.616 0.063,-1.214 0.063,-1.844 0,-1.094 -0.127,-2.167 -0.281,-3.218 l -6,-1.094 C 39.717,16.514 38.946,14.894 37.969,13.438 L 41.5,8.5938 C 40.405,7.2551 39.157,6.0186 37.781,4.9688 l -5.093,3.5 C 31.224,7.6029 29.648,6.9386 27.938,6.5625 L 27,0.625 C 26.147,0.52462 25.286,0.46875 24.406,0.46875 c -0.238,0 -0.482,-0.00748 -0.718,0 -0.116,0.00365 -0.229,-0.00669 -0.344,0 -0.031,0.00181 -0.063,-0.00212 -0.094,0 z m 0.812,15.187 c 0.115,-0.006 0.229,0 0.344,0 3.699,0 6.719,3.02 6.719,6.719 0,3.699 -3.02,6.687 -6.719,6.687 -3.699,0.001 -6.687,-2.988 -6.687,-6.687 0,-3.584 2.804,-6.539 6.343,-6.719 z" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3283"
+         style="opacity:0.64772997;color:#000000;fill:none;stroke:#ffffff;stroke-width:1.64880002"
+         d="m 36.239,23.782 a 12.728,12.728 0 1 1 -25.456,0 12.728,12.728 0 1 1 25.456,0 z"
+         transform="matrix(0.60652,0,0,0.60652,10.15,7.9368)" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3285"
+         style="opacity:0.34659005;color:#000000;fill:none;stroke:#ffffff"
+         d="m 22.558,1.6501 -0.878,5.779 c -1.671,0.3806 -4.745,1.5444 -6.159,2.422 L 10.849,6.3639 C 9.6054,7.3291 9.5201,7.3945 8.5261,8.6137 l 3.3779,5.0103 c -0.969,1.481 -2.1337,4.121 -2.5518,6.008 0,0 -5.9194,0.998 -5.9194,0.998 -0.1017,0.831 -0.0528,2.609 0.0157,3.294 l 5.6542,1.018 c 0.3958,1.933 1.8773,5.044 2.9263,6.637 l -3.5757,4.724 c 0.9479,1.177 1.1377,1.285 2.3177,2.229 l 4.781,-3.502 c 1.638,1.044 4.889,2.315 6.871,2.676 l 0.784,5.707 c 0.625,0.056 2.35,0.216 3.222,0.104 l 0.878,-5.941 c 1.882,-0.468 5.133,-1.803 6.668,-2.895 l 4.776,3.451 c 1.17,-0.995 1.181,-1.145 2.105,-2.374 l -3.539,-5.031 c 0.888,-1.534 2.037,-4.535 2.349,-6.346 L 45.46,23.42 c 0.049,-0.578 0.051,-2.189 -0.093,-3.175 L 39.463,19.226 C 39.022,17.599 37.51,14.666 36.594,13.301 L 40.346,8.5773 C 39.32,7.3226 38.939,7.1504 37.65,6.1664 L 32.707,9.7056 C 31.335,8.894 28.599,7.6569 26.995,7.3044 L 26.122,1.6501 c -0.8,-0.0941 -3.107,-0.0523 -3.564,0 z" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:none;font-family:Gillius ADF;-inkscape-font-specification:Gillius ADF"
+       x="179.60411"
+       y="558.28796"
+       id="text3180"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/proycon/work/lama-logo.png"
+       inkscape:export-xdpi="218"
+       inkscape:export-ydpi="218"><tspan
+         sodipodi:role="line"
+         id="tspan3182"
+         x="179.60411"
+         y="558.28796"
+         style="font-size:42px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sawasdee;-inkscape-font-specification:Sawasdee;fill:#1a1a1a"><tspan
+   style="font-weight:bold;fill:#1a1a1a"
+   id="tspan3502">LA</tspan>NGUAGE <tspan
+   style="font-weight:bold;fill:#1a1a1a"
+   id="tspan3504">MA</tspan>CHINES</tspan></text>
+    <g
+       id="g3450"
+       transform="translate(-34.642859,477.9438)"
+       inkscape:export-filename="/home/proycon/work/lama-logo.png"
+       inkscape:export-xdpi="218"
+       inkscape:export-ydpi="218">
+      <g
+         id="g266"
+         transform="matrix(-0.16729073,0,0,0.16729073,190.63894,0.24681968)">
+        <ellipse
+           id="ellipse268"
+           rx="54.5"
+           ry="17.5"
+           cy="363.41"
+           cx="119.09"
+           sodipodi:cx="119.09"
+           sodipodi:cy="363.41"
+           sodipodi:rx="54.5"
+           sodipodi:ry="17.5"
+           style="fill:#ffffff"
+           d="m 173.59,363.41 c 0,9.66499 -24.40048,17.5 -54.5,17.5 -30.099523,0 -54.500004,-7.83501 -54.500004,-17.5 0,-9.66498 24.400481,-17.5 54.500004,-17.5 30.09952,0 54.5,7.83502 54.5,17.5 z" />
+        <path
+           id="path2399_1_"
+           d="M 65.041,363.9 C 95.029,327 79.521,238.57 79.521,238.57 l 73.439,-3.18 c 0,0 -11.84,89.07 18.77,126.61"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff;stroke:#010101;stroke-width:4;stroke-linecap:round;stroke-linejoin:round" />
+        <path
+           id="path3214_1_"
+           d="m 152.95,235.38 -21,0.92 -52.44,2.28 c 0,0 0.295,4.72 0.382,12.23 16.107,8.04 32.338,12.71 43.718,12.71 4.08,0 8.7,-0.55 13.66,-1.61 7.57,32.46 11.62,78.22 34.1,99.8 l 0.35,0.3 c -21.07,-25.83 -16.73,-76.09 -18.23,-104.9 -0.17,-3.27 -0.3,-6.27 -0.39,-8.92 -0.06,-2.12 -0.09,-3.99 -0.11,-5.63 -0.02,-1.32 -0.03,-2.31 -0.04,-3.28 -0.01,-1.51 -0.01,-1.71 0,-2.35 v -1.55 z"
+           inkscape:connector-curvature="0"
+           style="fill:#010101;fill-opacity:0.3137" />
+      </g>
+      <g
+         id="g272"
+         transform="matrix(-0.16729073,0,0,0.16729073,190.63894,0.24681968)">
+        <g
+           id="g274">
+          <g
+             id="g276">
+            <path
+               id="path278"
+               d="m 194.14,122.33 c 0.21,0 -9.83,-17.29 -13.53,-21.01 1.09,-0.67 1.81,-1.27 1.95,-1.463 16.45,-13.354 10.15,-53.833 3.5,-72.492 -1.07,-2.976 -2.13,-5.367 -3.12,-7.035 -4.59,-9.654 -11.43,-19.569 -12.74,-18.204 3.54,7.025 3.81,11.114 2.91,11.303 -1.71,0.354 -3.72,-3.919 -9.07,-0.402 3.8,1.671 6.11,5.064 7.61,7.839 -12.75,7.954 -32.19,29.761 -24.63,54.879 0.64,2.154 1.35,4.137 2.05,5.992 -1.33,-0.385 -1.59,-0.154 -1.07,0.507 -0.5,-0.181 -1.01,-0.364 -1.52,-0.536 -8.12,-1.92 -17.1,-2.968 -27,-2.968 -0.96,0 -1.92,-0.019 -2.86,0 -8.08,0.164 -15.51,1.047 -22.36,2.534 -0.572,0.183 -1.137,0.381 -1.704,0.576 0.1,-0.34 -0.286,-0.407 -1.299,-0.113 C 91.951,79.882 92.66,77.9 93.308,75.745 100.87,50.627 81.422,28.819 68.672,20.866 70.176,18.092 72.484,14.698 76.285,13.027 70.938,9.509 68.923,13.783 67.218,13.429 66.311,13.24 66.59,9.151 70.125,2.126 68.815,0.76 61.979,10.676 57.384,20.33 c -0.988,1.667 -2.052,4.059 -3.113,7.035 -6.659,18.66 -12.952,59.139 3.496,72.492 0.14,0.193 0.861,0.793 1.945,1.463 -3.229,3.25 -14.792,20.98 -14.422,20.97 -6.184,11.71 -9.692,25.06 -9.692,39.23 0,16.97 5.025,34.91 13.66,50.87 20.009,25.3 52.122,42.22 70.222,42.22 19.03,0 51.47,-17.33 71.18,-43.15 8.34,-15.72 13.17,-33.3 13.17,-49.94 0,-14.15 -3.52,-27.48 -9.69,-39.19 z"
+               inkscape:connector-curvature="0"
+               style="fill:#ffffff;stroke:#010101;stroke-width:4;stroke-linejoin:round" />
+            <path
+               id="path3231"
+               d="m 199.81,141.08 c -1.96,20.58 -10.21,92.83 -86.52,102.88 -21.308,2.8 -63.407,-27.53 -78.937,-62.82 7.903,43.25 59.33,76.7 83.927,76.7 27.73,0 84.93,-39.4 84.93,-87.95 0,-10.09 -3.06,-32.42 -3.4,-28.81 z"
+               inkscape:connector-curvature="0"
+               style="fill:#010101;fill-opacity:0.3137" />
+          </g>
+          <g
+             id="g281"
+             style="fill:#fad5e5;stroke:#010101;stroke-width:4;stroke-linejoin:round">
+            <path
+               id="path3573_3_"
+               d="m 176.74,94.657 c 9.11,-8.012 5.62,-43.299 1.94,-54.495 -0.59,-1.786 -1.18,-2.22 -1.73,-3.221 -2.54,-5.792 -22.07,30.179 -17.89,45.25 0.36,1.292 17.6,12.582 17.68,12.466 z"
+               inkscape:connector-curvature="0" />
+            <path
+               id="path3573_1_"
+               d="M 80.986,82.19 C 85.171,67.119 65.639,31.148 63.094,36.94 c -0.547,1 -1.135,1.435 -1.723,3.221 -3.688,11.196 -7.171,46.483 1.936,54.495 0.077,0.117 17.32,-11.173 17.679,-12.466 z"
+               inkscape:connector-curvature="0" />
+          </g>
+        </g>
+        <path
+           id="path2397_1_"
+           d="m 132.91,203.32 c 0,7.59 -8.32,13.75 -13.82,13.75 -5.92,0 -13.81,-6.16 -13.81,-13.75 0,-7.59 6.19,-9.52 13.81,-9.52 7.63,0 13.82,1.93 13.82,9.52 z"
+           inkscape:connector-curvature="0"
+           style="fill:#fad5e5;stroke:#010101;stroke-width:4" />
+        <g
+           id="g3178_1_"
+           transform="translate(-2.5218,-5.0362)"
+           style="fill:none;stroke:#010101;stroke-width:4;stroke-linecap:round;stroke-linejoin:round">
+          <path
+             id="path2400_1_"
+             d="m 136.36,229.94 c 1.42,5.3 -1.73,10.74 -7.04,12.16 -2.55,0.68 -5.26,0.33 -7.55,-0.99"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path3176_1_"
+             d="m 106.87,229.94 c -1.42,5.3 1.73,10.74 7.04,12.16 2.55,0.68 5.27,0.33 7.55,-0.99"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g289">
+          <g
+             id="g291">
+            <path
+               id="path2387_2_"
+               d="m 79.787,153.88 c 0.009,13.73 -11.116,24.87 -24.849,24.88 -13.732,0 -24.873,-11.12 -24.882,-24.85 v -0.03 C 30.047,140.14 41.172,129 54.905,128.99 c 13.732,-0.01 24.872,11.12 24.882,24.85 v 0.04 z"
+               inkscape:connector-curvature="0"
+               style="fill:#ffffff;stroke:#010101;stroke-width:4;stroke-linecap:round;stroke-linejoin:round" />
+            <path
+               id="path2393_2_"
+               d="m 70.07,156.73 c 0.002,4.27 -3.451,7.72 -7.713,7.73 -4.262,0 -7.719,-3.45 -7.722,-7.72 v -0.01 c -0.003,-4.26 3.449,-7.72 7.711,-7.72 4.264,0 7.72,3.45 7.724,7.71 v 0.01 z"
+               inkscape:connector-curvature="0"
+               style="fill:#010101" />
+          </g>
+          <g
+             id="g295">
+            <path
+               id="path2391_2_"
+               d="m 208.13,153.88 c 0.01,13.73 -11.11,24.87 -24.85,24.88 -13.73,0 -24.87,-11.12 -24.88,-24.85 v -0.03 c -0.01,-13.74 11.12,-24.88 24.85,-24.89 13.73,-0.01 24.87,11.12 24.88,24.85 v 0.04 z"
+               inkscape:connector-curvature="0"
+               style="fill:#ffffff;stroke:#010101;stroke-width:4;stroke-linecap:round;stroke-linejoin:round" />
+            <path
+               id="path2395_2_"
+               d="m 182.98,156.73 c 0,4.27 -3.45,7.72 -7.71,7.73 -4.27,0 -7.72,-3.45 -7.73,-7.72 v -0.01 c 0,-4.26 3.45,-7.72 7.72,-7.72 4.26,0 7.72,3.45 7.72,7.71 v 0.01 z"
+               inkscape:connector-curvature="0"
+               style="fill:#010101" />
+          </g>
+        </g>
+      </g>
+    </g>
+    <path
+       sodipodi:type="arc"
+       style="fill:#cccccc"
+       id="path3506"
+       sodipodi:cx="132.90178"
+       sodipodi:cy="547.45148"
+       sodipodi:rx="6.7410712"
+       sodipodi:ry="5.4464288"
+       d="m 139.64285,547.45148 a 6.7410712,5.4464288 0 1 1 -13.48214,0 6.7410712,5.4464288 0 1 1 13.48214,0 z"
+       transform="matrix(1.0264901,0,0,1.1721311,-0.30629127,-98.117377)"
+       inkscape:export-filename="/home/proycon/work/lama-logo.png"
+       inkscape:export-xdpi="218"
+       inkscape:export-ydpi="218" />
+    <text
+       xml:space="preserve"
+       style="font-size:35.01823424999999901px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
+       x="125.53626"
+       y="561.39514"
+       id="text3508"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/proycon/work/lama-logo.png"
+       inkscape:export-xdpi="218"
+       inkscape:export-ydpi="218"><tspan
+         sodipodi:role="line"
+         id="tspan3510"
+         x="125.53626"
+         y="561.39514"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans Mono;-inkscape-font-specification:DejaVu Sans Mono;fill:#1a1a1a">*</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Gillius ADF;-inkscape-font-specification:Gillius ADF"
+       x="160.10918"
+       y="541.22498"
+       id="text3512"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3514"></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#e6e6e6;fill-opacity:1;stroke:none;filter:url(#filter3561);font-family:Gillius ADF;-inkscape-font-specification:Gillius ADF"
+       x="178.98605"
+       y="-572.05774"
+       id="text3180-3"
+       sodipodi:linespacing="125%"
+       transform="matrix(1,0,0,-0.3731524,0,348.37448)"
+       inkscape:export-filename="/home/proycon/work/lama-logo.png"
+       inkscape:export-xdpi="218"
+       inkscape:export-ydpi="218"><tspan
+         sodipodi:role="line"
+         id="tspan3182-2"
+         x="178.98605"
+         y="-572.05774"
+         style="font-size:42px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#e6e6e6;font-family:Sawasdee;-inkscape-font-specification:Sawasdee"><tspan
+   style="font-weight:bold;fill:#e6e6e6"
+   id="tspan3502-4">LA</tspan>NGUAGE <tspan
+   style="font-weight:bold;fill:#e6e6e6"
+   id="tspan3504-7">MA</tspan>CHINES</tspan></text>
+  </g>
+</svg>
