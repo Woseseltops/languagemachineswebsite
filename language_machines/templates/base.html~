@@ -19,7 +19,7 @@
       <div id="header">
          * Language machines
       </div>
-         <div id="menu">{% show_menu 0 100 100 100 %}</div>
+         <div id="pagemenu">{% show_menu 0 100 100 100 %}</div>
       <div id="content">
          {% block content %}
          {% endblock content %}
