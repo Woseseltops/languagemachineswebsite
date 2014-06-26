@@ -1,0 +1,56 @@
+html
+{
+	min-height: 100%;
+}
+
+body
+{
+	background: linear-gradient(black, white);
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+}
+
+#container
+{
+	width: 1000px;
+	margin: auto;
+	background-color: white;
+	overflow: auto;
+}
+
+#header
+{
+	height: 100px;
+	background: linear-gradient(to right,grey, white);
+}
+
+#menu
+{
+	background-color: black;
+	color: white;
+	padding: 10px
+}
+
+#menu>li
+{
+	display:inline-block;
+	padding: 10px;
+}
+
+#menu a:link, #menu a:visited, #menu a:hover, #menu a:active
+{
+	color: white;
+}
+
+#content
+{
+	padding: 55px;
+}
+
+h1
+{
+	font-weight: normal;
+	border-bottom: 1px solid #BE311A; /* Radboud red */
+	font-size: 35px;
+	padding-bottom: 10px;
+}
