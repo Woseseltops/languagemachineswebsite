@@ -12,17 +12,23 @@
 
 </head>
 <body>
+<div id="gradient"></div>
 {% cms_toolbar %}
 
     <div id="container">
 
       <div id="header">
-         * Language machines
+         <div id="rulogo"></div>
+         <div id="logo"></div>
       </div>
          <div id="menu">{% show_menu 0 100 100 100 %}</div>
       <div id="content">
          {% block content %}
          {% endblock content %}
+         <div style="clear: both"></div>
+      </div>
+      <div id="footer">
+            
       </div>
 
     </div>
