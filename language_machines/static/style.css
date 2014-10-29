@@ -1,54 +1,109 @@
-html
-{
+html {
 	min-height: 100%;
 }
 
-body
-{
-	background: linear-gradient(black, white);
+body {
+    background: url('back.png');
 	font-family: 'Lato', sans-serif;
-	font-size: 20px;
+	font-size: 15px;
+    margin: 0px;
+    padding: 0px;
 }
 
-#container
-{
+#gradient {
+	background: linear-gradient(rgba(10,10,10,0.9), rgba(0,0,0,0.1));
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: -100;
+}
+
+#container {
 	width: 1000px;
 	margin: auto;
-	background-color: white;
 	overflow: auto;
+    box-shadow: 5px 5px 10px #111;
+    border-radius: 25px;
 }
 
-#header
-{
-	height: 100px;
-	background: linear-gradient(to right,grey, white);
+#header {
+    margin-top: 10px;
+	height: 74px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+	background: linear-gradient(to right,grey, white 80%);
 }
 
-#menu
-{
+#footer {
+    background: gray;
+    border-top: 1px solid #666;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    min-height: 30px;
+}
+
+#logo {
+    background: url('lama-logo-transparent.png');
+    background-repeat: no-repeat;
+    background-size: 500px;
+    margin-left: 25px;
+    width: 500px;
+    height: 74px;
+}
+#rulogo {
+    float: right;
+    background: url('ru-logo.png');
+    background-repeat: no-repeat;
+    background-size: 320px;
+    width: 340px;
+    height: 113px;
+}
+
+#menu {
 	background-color: black;
 	color: white;
-	padding: 10px
+	padding-left: 10px;
+	padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
-#menu>li
-{
+#menu>li {
 	display:inline-block;
 	padding: 10px;
 }
-
-#menu a:link, #menu a:visited, #menu a:hover, #menu a:active
-{
-	color: white;
+#menu>li.selected {
+    display: inline-block;
+    border-bottom: 3px solid #BE311A;
 }
 
-#content
-{
+
+#menu a:link, #menu a:visited, #menu a:hover, #menu a:active {
+	color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+#menu a:hover {
+    text-decoration: underline;
+    color: #BE311A;
+}
+
+a:link, a:active, a:visited {
+    color: #BE311A;
+}
+
+#content {
+    background: white;
 	padding: 55px;
 }
 
-h1
-{
+h1 {
 	font-weight: normal;
 	border-bottom: 1px solid #BE311A; /* Radboud red */
 	font-size: 35px;
