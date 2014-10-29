@@ -62,14 +62,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
+STATIC_URL = '/languagemachines/static/'
+MEDIA_URL = '/languagemachines/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'language_machines', 'static'),
+    '/scratch2/www/languagemachineswebsite/language_machines/static'
 )
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
+
 SITE_ID = 1
 
 TEMPLATE_LOADERS = (
@@ -177,5 +184,5 @@ CMS_PLACEHOLDER_CONF = {}
 
 DATABASES = {
     'default':
-        {'ENGINE': 'django.db.backends.sqlite3', 'NAME': 'project.db', 'HOST': 'localhost', 'USER': '', 'PASSWORD': '', 'PORT': ''}
+        {'ENGINE': 'django.db.backends.sqlite3', 'NAME': '/scratch2/www/languagemachineswebsite/project.db', 'HOST': 'localhost', 'USER': '', 'PASSWORD': '', 'PORT': '', 'AUTOCOMMIT': True, 'ATOMIC_REQUESTS': True}
 }
