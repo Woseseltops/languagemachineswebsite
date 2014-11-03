@@ -15,7 +15,10 @@
    id="svg3072"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="New document 4">
+   sodipodi:docname="lama-logo-only.svg"
+   inkscape:export-filename="/home/proycon/work/languagemachineswebsite/design/lama-logo-only.png"
+   inkscape:export-xdpi="218"
+   inkscape:export-ydpi="218">
   <defs
      id="defs3074">
     <linearGradient
@@ -146,6 +149,13 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <rect
+       style="color:#000000;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.39999998000000003;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect3152"
+       width="734.28571"
+       height="734.28571"
+       x="5.7142878"
+       y="169.50504" />
     <path
        d="m 625.93887,825.57488 a 247.76336,76.405981 1.0206002 0 1 -495.44807,-8.82619 247.76336,76.405981 1.0206002 1 1 495.44807,8.82619 z"
        style="opacity:0.40909005;color:#000000;fill:url(#radialGradient3070)"
