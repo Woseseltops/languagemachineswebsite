@@ -32,6 +32,8 @@ class Project(models.Model):
     sponsors = models.CharField("Sponsor(s)", max_length=255)
     twitter = models.CharField("Twitter", max_length=60)
     description = models.TextField("Short Description")
+    members = models.ManyToManyField(Person)
+    software = models.ManyToManyField(Person)
 
 class Sofware(models.Model):
     name = models.CharField("Project name", max_length=100)
@@ -40,6 +42,6 @@ class Sofware(models.Model):
     documentation = models.CharField("Documentation", max_length=250)
     license = models.charfield("License",max_length=10, choices=SOFTWARE_LICENSES.items())
     description = models.TextField("Short Description")
-
+    authors = models.ManyToManyField(Person)
 
 
