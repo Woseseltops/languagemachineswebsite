@@ -1,11 +1,9 @@
 from django.db import models
+from publications.models import Publication
 
-
-PERSON_FUNCTIONS = { 'phd':'PhD Candidate','postdoc':'Postdoc','prof':'Professor','assistantprof':'Assistant Professor','programmer':'Scientific Programmer','intern':'Intern','master':'Master\'s Candidate', 'bachelor':'Bachelor\'s Candidate' }
+PERSON_FUNCTIONS = { 'phd':'PhD Candidate','postdoc':'Postdoc','prof':'Professor','assistantprof':'Assistant Professor','programmer':'Scientific Programmer','intern':'Intern','master':'Master\'s Candidate', 'bachelor':'Bachelor\'s Candidate', 'guest':'Guest Researcher' }
 SOFTWARE_LICENSES = { 'gpl3': 'GNU Public License v3', 'gpl2': 'GNU Public License v2', 'agpl':'GPL Affero Public License v3','lgpl': 'Lesser GNU Public License v3', 'mit': 'MIT License', 'apache':'Apache License v2.0' }
 
-
-# Create your models here.
 class Person(models.Model):
     firstname = models.CharField("First name", max_length=50)
     lastname = models.CharField("Last name", max_length=60)
@@ -23,6 +21,7 @@ class Person(models.Model):
     joined_date = models.DateField()
     left_date = models.DateField(null=True,blank=True)
     description = models.TextField("Description",help="A short description about the person. For more text, use the dedicated page.")
+    publications = models.ManyToManyField(Publication)
 
 
 class Project(models.Model):
@@ -34,14 +33,18 @@ class Project(models.Model):
     description = models.TextField("Description",help="A short description about the project. For more text, use the dedicated page.")
     members = models.ManyToManyField(Person)
     software = models.ManyToManyField(Person)
+    publications = models.ManyToManyField(Publication)
 
 class Sofware(models.Model):
-    name = models.CharField("Project name", max_length=100)
+    name = models.CharField("Name", max_length=100)
     Website = models.CharField("Website", max_length=250)
     source = models.CharField("Source code", max_length=250)
+    webservice = models.CharField("Webservice", max_length=250)
+    demo = models.CharField("Demo", max_length=250)
     documentation = models.CharField("Documentation", max_length=250)
     license = models.charfield("License",max_length=10, choices=SOFTWARE_LICENSES.items())
     description = models.TextField("Description",help="A short description about the software. For more text, use the dedicated page.")
     authors = models.ManyToManyField(Person)
+    publications = models.ManyToManyField(Publication)
 
 
