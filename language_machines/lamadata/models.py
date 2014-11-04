@@ -32,20 +32,7 @@ class Person(models.Model):
         return fullname.replace(" ", "-")
 
 
-
-class Project(models.Model):
-    name = models.CharField("Project name", max_length=100)
-    start_date = models.DateField()
-    end_date = models.DateField(null=True,blank=True)
-    sponsors = models.CharField("Sponsor(s)", max_length=255)
-    twitter = models.CharField("Twitter", max_length=60)
-    description = models.TextField("Description",help="A short description about the project. For more text, use the dedicated page.")
-    members = models.ManyToManyField(Person)
-    software = models.ManyToManyField(Person)
-    publications = models.ManyToManyField(Publication)
-
-
-class Sofware(models.Model):
+class Software(models.Model):
     name = models.CharField("Name", max_length=100)
     Website = models.CharField("Website", max_length=250)
     source = models.CharField("Source code", max_length=250)
@@ -56,6 +43,18 @@ class Sofware(models.Model):
     description = models.TextField("Description",help="A short description about the software. For more text, use the dedicated page.")
     authors = models.ManyToManyField(Person)
     publications = models.ManyToManyField(Publication)
+
+class Project(models.Model):
+    name = models.CharField("Project name", max_length=100)
+    start_date = models.DateField()
+    end_date = models.DateField(null=True,blank=True)
+    sponsors = models.CharField("Sponsor(s)", max_length=255)
+    twitter = models.CharField("Twitter", max_length=60)
+    description = models.TextField("Description",help="A short description about the project. For more text, use the dedicated page.")
+    members = models.ManyToManyField(Person)
+    software = models.ManyToManyField(Software)
+    publications = models.ManyToManyField(Publication)
+
 
 
 class PersonView(CMSPlugin):
