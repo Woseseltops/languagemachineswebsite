@@ -58,15 +58,14 @@ class Sofware(models.Model):
     publications = models.ManyToManyField(Publication)
 
 
-
-class PersonPluginViewConfig(CMSPlugin):
+class PersonView(CMSPlugin):
     person = models.ForeignKey(Person)
 
-class SoftwarePluginViewConfig(CMSPlugin):
+class SoftwareView(CMSPlugin):
     software = models.ForeignKey(Software)
 
-class ProjectPluginViewConfig(CMSPlugin):
+class ProjectView(CMSPlugin):
     project = models.ForeignKey(Project)
 
-class SoftwarePluginIndexConfig(CMSPlugin):
+class SoftwareIndex(CMSPlugin):
     viewtype = models.CharField(max_length=1, choices=( ('all',"All"), ("webservices",'Webservices'), ('demos','Demos') ) )
