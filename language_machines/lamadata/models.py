@@ -1,8 +1,11 @@
 from django.db import models
+from cms.models.pluginmodel import CMSPlugin
 from publications.models import Publication
 
 PERSON_FUNCTIONS = { 'phd':'PhD Candidate','postdoc':'Postdoc','prof':'Professor','assistantprof':'Assistant Professor','programmer':'Scientific Programmer','intern':'Intern','master':'Master\'s Candidate', 'bachelor':'Bachelor\'s Candidate', 'guest':'Guest Researcher' }
 SOFTWARE_LICENSES = { 'gpl3': 'GNU Public License v3', 'gpl2': 'GNU Public License v2', 'agpl':'GPL Affero Public License v3','lgpl': 'Lesser GNU Public License v3', 'mit': 'MIT License', 'apache':'Apache License v2.0' }
+
+
 
 class Person(models.Model):
     firstname = models.CharField("First name", max_length=50)
@@ -41,6 +44,7 @@ class Project(models.Model):
     software = models.ManyToManyField(Person)
     publications = models.ManyToManyField(Publication)
 
+
 class Sofware(models.Model):
     name = models.CharField("Name", max_length=100)
     Website = models.CharField("Website", max_length=250)
@@ -54,3 +58,15 @@ class Sofware(models.Model):
     publications = models.ManyToManyField(Publication)
 
 
+
+class PersonPluginViewConfig(CMSPlugin):
+    person = models.ForeignKey(Person)
+
+class SoftwarePluginViewConfig(CMSPlugin):
+    software = models.ForeignKey(Software)
+
+class ProjectPluginViewConfig(CMSPlugin):
+    project = models.ForeignKey(Project)
+
+class SoftwarePluginIndexConfig(CMSPlugin):
+    viewtype = models.CharField(max_length=1, choices=( ('all',"All"), ("webservices",'Webservices'), ('demos','Demos') ) )
