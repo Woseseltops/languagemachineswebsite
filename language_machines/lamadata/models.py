@@ -24,7 +24,7 @@ class Person(models.Model):
     birth_date = models.DateField()
     joined_date = models.DateField()
     left_date = models.DateField(null=True,blank=True)
-    description = models.TextField("Description",help="A short description about the person. For more text, use the dedicated page.")
+    description = models.TextField("Description",help_text="A short description about the person. For more text, use the dedicated page.")
     publications = models.ManyToManyField(Publication)
 
     def getslug(self):
@@ -39,8 +39,8 @@ class Software(models.Model):
     webservice = models.CharField("Webservice", max_length=250)
     demo = models.CharField("Demo", max_length=250)
     documentation = models.CharField("Documentation", max_length=250)
-    license = models.charfield("License",max_length=10, choices=SOFTWARE_LICENSES.items())
-    description = models.TextField("Description",help="A short description about the software. For more text, use the dedicated page.")
+    license = models.CharField("License",max_length=10, choices=SOFTWARE_LICENSES.items())
+    description = models.TextField("Description",help_text="A short description about the software. For more text, use the dedicated page.")
     authors = models.ManyToManyField(Person)
     publications = models.ManyToManyField(Publication)
 
@@ -53,7 +53,7 @@ class Project(models.Model):
     end_date = models.DateField(null=True,blank=True)
     sponsors = models.CharField("Sponsor(s)", max_length=255)
     twitter = models.CharField("Twitter", max_length=60)
-    description = models.TextField("Description",help="A short description about the project. For more text, use the dedicated page.")
+    description = models.TextField("Description",help_text="A short description about the project. For more text, use the dedicated page.")
     members = models.ManyToManyField(Person)
     software = models.ManyToManyField(Software)
     publications = models.ManyToManyField(Publication)

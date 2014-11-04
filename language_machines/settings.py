@@ -147,7 +147,9 @@ INSTALLED_APPS = (
     'djangocms_teaser',
     'djangocms_video',
     'reversion',
-    'language_machines'
+    'publications',
+    'language_machines',
+    'language_machines.lamadata'
 )
 
 LANGUAGES = (
