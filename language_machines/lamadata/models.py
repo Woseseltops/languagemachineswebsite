@@ -44,6 +44,9 @@ class Software(models.Model):
     authors = models.ManyToManyField(Person)
     publications = models.ManyToManyField(Publication)
 
+    def getslug(self):
+        return self.name.replace(" ", "-")
+
 class Project(models.Model):
     name = models.CharField("Project name", max_length=100)
     start_date = models.DateField()
@@ -55,7 +58,8 @@ class Project(models.Model):
     software = models.ManyToManyField(Software)
     publications = models.ManyToManyField(Publication)
 
-
+    def getslug(self):
+        return self.name.replace(" ", "-")
 
 class PersonView(CMSPlugin):
     person = models.ForeignKey(Person)
@@ -68,3 +72,5 @@ class ProjectView(CMSPlugin):
 
 class SoftwareIndex(CMSPlugin):
     viewtype = models.CharField(max_length=1, choices=( ('all',"All"), ("webservices",'Webservices'), ('demos','Demos') ) )
+
+
