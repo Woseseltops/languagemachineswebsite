@@ -5,7 +5,7 @@ from cms.models.pluginmodel import CMSPlugin
 from language_machines.lamadata.models import Person, Project, Software, SoftwareIndex, PersonView, SoftwareView, ProjectView
 
 class PersonIndexPlugin(CMSPluginBase):
-    name = "Person Plugin - Index"
+    name = "Person Index Plugin"
     model = CMSPlugin
     render_template = "person_index_plugin.html"
 
@@ -14,8 +14,8 @@ class PersonIndexPlugin(CMSPluginBase):
         context['instance'] = instance
         return context
 
-class PersonViewPlugin(CMSPlugin):
-    name = "Person Plugin - View"
+class PersonViewPlugin(CMSPluginBase):
+    name = "Person View Plugin"
     model = PersonView
     render_template = "person_view_plugin.html"
 
@@ -28,7 +28,7 @@ class PersonViewPlugin(CMSPlugin):
 
 
 class SoftwareIndexPlugin(CMSPluginBase):
-    name = "Software Plugin - Index"
+    name = "Software Index Plugin"
     model = SoftwareIndex
     render_template = "software_index_plugin.html"
 
@@ -37,20 +37,20 @@ class SoftwareIndexPlugin(CMSPluginBase):
         context['instance'] = instance
         return context
 
-class SoftwareViewPlugin(CMSPlugin):
-    name = "Software Plugin - View"
+class SoftwareViewPlugin(CMSPluginBase):
+    name = "Software View Plugin"
     model = SoftwareView
     render_template = "software_view_plugin.html"
 
     def render(self, context, instance, placeholder):
-        context['person'] = instance.person
+        context['software'] = instance.person
         return context
 
     def copy_relations(self, oldinstance):
         self.person = oldinstance.person.all()
 
 class ProjectIndexPlugin(CMSPluginBase):
-    name = "Project Plugin - Index"
+    name = "Project Index Plugin"
     model = CMSPlugin
     render_template = "project_index_plugin.html"
 
@@ -58,6 +58,19 @@ class ProjectIndexPlugin(CMSPluginBase):
         context['projects'] = Project.objects.order_by('name')
         context['instance'] = instance
         return context
+
+class ProjectViewPlugin(CMSPluginBase):
+    name = "Project View Plugin"
+    model = ProjectView
+    render_template = "project_view_plugin.html"
+
+    def render(self, context, instance, placeholder):
+        context['project'] = instance.project
+        return context
+
+    def copy_relations(self, oldinstance):
+        self.person = oldinstance.person.all()
+
 
 
 plugin_pool.register_plugin(PersonIndexPlugin)

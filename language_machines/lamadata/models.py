@@ -17,7 +17,7 @@ class Person(models.Model):
     function2 = models.CharField("Secondary function", max_length=25,choices=PERSON_FUNCTIONS.items())
     interests = models.CharField("Interests", max_length=255)
     email = models.CharField("E-mail", max_length=60)
-    website = models.CharField("Website", max_length=60)
+    website = models.URLField("Website", max_length=60)
     twitter = models.CharField("Twitter", max_length=60)
     room = models.CharField("Room", max_length=60)
     phone = models.CharField("Phone", max_length=60)
@@ -25,6 +25,7 @@ class Person(models.Model):
     joined_date = models.DateField()
     left_date = models.DateField(null=True,blank=True)
     description = models.TextField("Description",help_text="A short description about the person. For more text, use the dedicated page.")
+    image = models.ImageField("Avatar",upload_to='avatars/', blank=True, null=True)
     publications = models.ManyToManyField(Publication)
 
     def getslug(self):
@@ -34,18 +35,22 @@ class Person(models.Model):
 
 class Software(models.Model):
     name = models.CharField("Name", max_length=100)
-    Website = models.CharField("Website", max_length=250)
-    source = models.CharField("Source code", max_length=250)
-    webservice = models.CharField("Webservice", max_length=250)
-    demo = models.CharField("Demo", max_length=250)
-    documentation = models.CharField("Documentation", max_length=250)
+    Website = models.URLField("Website", help_text="Link to the software's dedicated website", blank=True,null=True)
+    source = models.URLField("Source code", help_text="Link to source code repository or download", blank=True,null=True)
+    webservice = models.URLField("Webservice", help_text="Link to Webservice URL", blank=True, null=True)
+    demo = models.URLField("Demo", help_text="Link to the demo URL", blank=True,null=True)
+    documentation = models.URLField("Documentation", help_text="Link to where the documentation is hosted",blank=True,null=True)
     license = models.CharField("License",max_length=10, choices=SOFTWARE_LICENSES.items())
     description = models.TextField("Description",help_text="A short description about the software. For more text, use the dedicated page.")
     authors = models.ManyToManyField(Person)
     publications = models.ManyToManyField(Publication)
+    image = models.ImageField("Software Logo", upload_to='softwarelogos/', blank=True, null=True)
 
     def getslug(self):
         return self.name.replace(" ", "-")
+
+    class Meta:
+        verbose_name_plural = "Software"
 
 class Project(models.Model):
     name = models.CharField("Project name", max_length=100)
@@ -57,6 +62,7 @@ class Project(models.Model):
     members = models.ManyToManyField(Person)
     software = models.ManyToManyField(Software)
     publications = models.ManyToManyField(Publication)
+    image = models.ImageField("Project logo", upload_to='projectlogos/', blank=True, null=True)
 
     def getslug(self):
         return self.name.replace(" ", "-")
