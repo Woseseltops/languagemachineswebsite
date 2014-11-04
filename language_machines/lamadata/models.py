@@ -12,6 +12,7 @@ class Person(models.Model):
     affiliation = models.CharField("Affiliation", max_length=255)
     function = models.CharField("Function", max_length=25,choices=PERSON_FUNCTIONS.items())
     function2 = models.CharField("Secondary function", max_length=25,choices=PERSON_FUNCTIONS.items())
+    interests = models.CharField("Interests", max_length=255)
     email = models.CharField("E-mail", max_length=60)
     website = models.CharField("Website", max_length=60)
     twitter = models.CharField("Twitter", max_length=60)
@@ -22,6 +23,11 @@ class Person(models.Model):
     left_date = models.DateField(null=True,blank=True)
     description = models.TextField("Description",help="A short description about the person. For more text, use the dedicated page.")
     publications = models.ManyToManyField(Publication)
+
+    def getslug(self):
+        fullname = self.firstname + " " + self.lastname
+        return fullname.replace(" ", "-")
+
 
 
 class Project(models.Model):

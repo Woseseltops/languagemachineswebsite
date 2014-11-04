@@ -4,31 +4,31 @@ from cms.models.pluginmodel import CMSPlugin
 
 from language_machines.lamadata.models import Person, Project, Software
 
-class TeamListPlugin(CMSPluginBase):
+class PersonPluginIndex(CMSPluginBase):
     model = CMSPlugin
-    render_template = "teamlist_plugin.html"
+    render_template = "person_plugin_index.html"
 
     def render(self, context, instance, placeholder):
         context['persons'] = Person.objects.order_by('firstname')
         return context
 
 
-class SoftwareListPlugin(CMSPluginBase):
+class SoftwarePluginIndex(CMSPluginBase):
     model = CMSPlugin
-    render_template = "softwarelist_plugin.html"
+    render_template = "software_plugin_index.html"
 
     def render(self, context, instance, placeholder):
         context['software'] = Software.objects.order_by('name')
         return context
 
-class ProjectListPlugin(CMSPluginBase):
+class ProjectPluginIndex(CMSPluginBase):
     model = CMSPlugin
-    render_template = "projectlist_plugin.html"
+    render_template = "project_plugin_index.html"
 
     def render(self, context, instance, placeholder):
         context['projects'] = Project.objects.order_by('name')
         return context
 
-plugin_pool.register_plugin(TeamListPlugin)
-plugin_pool.register_plugin(SoftwareListPlugin)
-plugin_pool.register_plugin(ProjectListPlugin)
+plugin_pool.register_plugin(PersonPluginIndex)
+plugin_pool.register_plugin(SoftwarePluginIndex)
+plugin_pool.register_plugin(ProjectPluginIndex)

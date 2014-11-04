@@ -1,0 +1,12 @@
+<div class="sofwareindex">
+{% for app in software %}
+    <div class="software">
+        <h3><a href="{{ app.getslug() }}">{{ app.name }}</a> <span class="title">{{ person.title }}</span></h3>
+        <span class="function">{{ person.get_function_display() }} {% if person.function2 %}{{ person.get_function2_display() }}{% endif %}</span> <span class="affiliation">{{ person.affiliation }}</span>
+        {% if person.email %}
+        <span class="item"><a href="mailto:{{ person.email }}">{{ person.email }}</a></span>
+        {% endif %}
+        <p>{{ person.description }}</p>
+    </div>
+{% endfor %}
+</div>
