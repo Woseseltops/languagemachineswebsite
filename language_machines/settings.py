@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+HOSTNAME = os.uname()[1]
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -50,7 +51,7 @@ WSGI_APPLICATION = 'language_machines.wsgi.application'
 
 LANGUAGE_CODE = 'en'
 
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Europe/Amsterdam'
 
 USE_I18N = True
 
@@ -67,9 +68,10 @@ MEDIA_URL = '/languagemachines/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+
+
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'language_machines', 'static'),
-    '/scratch2/www/languagemachineswebsite/language_machines/static'
 )
 
 STATICFILES_FINDERS = (
@@ -182,7 +184,8 @@ CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
 
+
 DATABASES = {
     'default':
-        {'ENGINE': 'django.db.backends.sqlite3', 'NAME': '/scratch2/www/languagemachineswebsite/project.db', 'HOST': 'localhost', 'USER': '', 'PASSWORD': '', 'PORT': '', 'AUTOCOMMIT': True, 'ATOMIC_REQUESTS': True}
+        {'ENGINE': 'django.db.backends.sqlite3', 'NAME': os.path.join(BASE_DIR,'../project.db'), 'HOST': 'localhost', 'USER': '', 'PASSWORD': '', 'PORT': '', 'AUTOCOMMIT': True, 'ATOMIC_REQUESTS': True}
 }
