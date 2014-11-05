@@ -1,0 +1,12 @@
+<div class="projectindex">
+{% for project in projects %}
+    <div class="project">
+        <h3><a href="{{ project.getslug() }}">{{ project.name }}</a></span></h3>
+        <span class="sponsor">{{ project.sponsor }}</span>
+        {% if project.website %}
+        <span class="item"><a href="{{ project.website }}">{{ project.website }}</a></span>
+        {% endif %}
+        <p>{{ project.description }}</p>
+    </div>
+{% endfor %}
+</div>

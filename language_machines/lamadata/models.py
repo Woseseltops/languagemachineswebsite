@@ -52,8 +52,16 @@ class Software(models.Model):
     class Meta:
         verbose_name_plural = "Software"
 
+class ProjectCategory(models.Model):
+    name = models.CharField("Category name", max_length=200)
+
+    class Meta:
+        verbose_name = "Project Category"
+        verbose_name_plural = "Project Categories"
+
 class Project(models.Model):
     name = models.CharField("Project name", max_length=100)
+    category = models.ForeignKey(ProjectCategory)
     start_date = models.DateField()
     end_date = models.DateField(null=True,blank=True)
     sponsors = models.CharField("Sponsor(s)", max_length=255)
