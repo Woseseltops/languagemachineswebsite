@@ -1,0 +1,8 @@
+<div class="projectview">
+        <h1>{{ project.name }}<h1>
+        <span class="sponsor">{{ project.sponsor }}</span>
+        {% if project.website %}
+        <span class="item"><a href="{{ project.website }}">{{ project.website }}</a></span>
+        {% endif %}
+        <p>{{ project.description }}</p>
+</div>

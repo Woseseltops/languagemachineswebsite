@@ -1,0 +1,16 @@
+<div class="personview">
+        <h1>{{ software.name }}<h1>
+        {% if software.website %}
+        <span class="item"><label>Website:</label> <a href="{{ software.website }}">{{ software.website }}</a></span>
+        {% endif %}
+        {% if software.source %}
+        <span class="item"><label>Source:</label> <a href="{{ software.source }}">{{ software.source }}</a></span>
+        {% endif %}
+        {% if software.webservice %}
+        <span class="item"><label>Webservice:</label> <a href="{{ software.webservice }}">{{ software.webservice }}</a></span>
+        {% endif %}
+        {% if software.demo %}
+        <span class="item"><label>Demo:</label> <a href="{{ software.demo }}">{{ software.demo }}</a></span>
+        {% endif %}
+        <p>{{ software.description }}</p>
+</div>

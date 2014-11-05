@@ -4,6 +4,8 @@ from cms.models.pluginmodel import CMSPlugin
 
 from language_machines.lamadata.models import Person, Project, Software, SoftwareIndex, PersonView, SoftwareView, ProjectView
 
+
+
 class PersonIndexPlugin(CMSPluginBase):
     name = "Person Index Plugin"
     model = CMSPlugin
@@ -76,4 +78,6 @@ class ProjectViewPlugin(CMSPluginBase):
 plugin_pool.register_plugin(PersonIndexPlugin)
 plugin_pool.register_plugin(PersonViewPlugin)
 plugin_pool.register_plugin(SoftwareIndexPlugin)
+plugin_pool.register_plugin(SoftwareViewPlugin)
 plugin_pool.register_plugin(ProjectIndexPlugin)
+plugin_pool.register_plugin(ProjectViewPlugin)
