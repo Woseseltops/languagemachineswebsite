@@ -27,7 +27,8 @@ def projectview(request, project_id):
     return render_to_response('projectview.html', {'project': Project.objects.get(pk=project_id)}, context_instance=RequestContext(request) )
 
 def softwareview(request, software_id):
-    return render_to_response('softwareview.html', {'software': Software.objects.get(pk=software_id)}, context_instance=RequestContext(request) )
+    projects = Project.objects.filter(software__id=software_id)
+    return render_to_response('softwareview.html', {'software': Software.objects.get(pk=software_id), 'projects': projects}, context_instance=RequestContext(request) )
 
 def publicationindex(request, publication_id):
     pass

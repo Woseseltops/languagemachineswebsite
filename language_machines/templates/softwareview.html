@@ -4,23 +4,72 @@
 {% block title %}{% page_attribute 'title' %}{% endblock title %}
 
 {% block content %}
-<div class="softwareview">
-        <h1>{{ software.name }}<h1>
+<div class="view">
+        {% if software.image %}
+        <div class="imagespaceright">
+            <img src="{{ software.image.image.url }}" alt="{{ software }}" title="{{ software }}" width="120" height="160" />
+        </div>
+        {% endif %}
+        <h1>{{ software.name }}</h1>
+        {% if software.authors %}
+        <div class="topfields">
+        <span class="function">by 
+        {% for author in software.authors.all %}
+        <a href="{% url 'person' author.id %}">{{ author }}</a> &nbsp;  
+        {% endfor %}
+        </span>
+        </div>
+        {% endif %}
         {% if software.website %}
-        <span class="item"><label>Website:</label> <a href="{{ software.website }}">{{ software.website }}</a></span>
+        <span class="field"><label>Website:</label> <a href="{{ software.website }}">{{ software.website }}</a></span>
         {% endif %}
         {% if software.source %}
-        <span class="item"><label>Source:</label> <a href="{{ software.source }}">{{ software.source }}</a></span>
+        <span class="field"><label>Source:</label> <a href="{{ software.source }}">{{ software.source }}</a></span>
         {% endif %}
         {% if software.webservice %}
-        <span class="item"><label>Webservice:</label> <a href="{{ software.webservice }}">{{ software.webservice }}</a></span>
+        <span class="field"><label>Webservice:</label> <a href="{{ software.webservice }}">{{ software.webservice }}</a></span>
         {% endif %}
         {% if software.demo %}
-        <span class="item"><label>Demo:</label> <a href="{{ software.demo }}">{{ software.demo }}</a></span>
+        <span class="field"><label>Demo:</label> <a href="{{ software.demo }}">{{ software.demo }}</a></span>
+        {% endif %}
+        {% if software.webservice %}
+        <span class="field"><label>Documentation:</label> <a href="{{ software.documentation }}">{{ software.documentation }}</a></span>
+        {% endif %}
+        {% if software.license %}
+        <span class="field"><label>License:</label> {{ software.get_license_display }}</span>
         {% endif %}
         <p>{{ software.description }}</p>
 </div>
 
 {% render_placeholder software.content %}
+
+{% if projects %}
+<h2>Research Projects</h2>
+
+<p>This software is used in the following research projects:</p>
+
+<div class="index">
+{% for project in projects %}
+    {% include 'projectitem.html' %}
+{% endfor %}
+</div>
+
+{% endif %}
+
+{% if software.publications.all %}
+<h2>Publications</h2>
+
+<p>The following publications are relevant for this software:</p>
+
+<div class="publicationindex">
+{% for publication in software.publications.all %}
+    <div{% if not forloop.last %} style="margin-bottom: 20px;"{% endif %}>
+        {% include "publications/publication.html" %}
+    </div>
+{% endfor %}
+</div>
+
+{% endif %}
+
 
 {% endblock %}
