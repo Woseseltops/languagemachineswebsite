@@ -208,3 +208,10 @@ div.publicationindex {
 div.publicationindex>div {
 	border-bottom: 1px solid #aaa; 
 }
+span.login {
+    width: 97%;
+    text-align: right;
+    display: block;
+    font-size: 90%;
+    margin-top: 3px;
+}
