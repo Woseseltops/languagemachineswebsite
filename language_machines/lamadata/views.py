@@ -8,7 +8,7 @@ from django.db.models import Q
 
 
 def personindex(request):
-    return render_to_response('personindex.html', {'persons': Person.objects.order_by(['joined_date','first_name'])}, context_instance=RequestContext(request) )
+    return render_to_response('personindex.html', {'persons': Person.objects.order_by('joined_date','firstname')}, context_instance=RequestContext(request) )
 
 def projectindex(request):
     return render_to_response('projectindex.html', {'projects': Project.objects.order_by('name')}, context_instance=RequestContext(request) )
