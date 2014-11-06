@@ -1,3 +1,10 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags sekizai_tags %}
+
+{% block title %}{% page_attribute 'title' %}{% endblock title %}
+
+{% block content %}
+
 <div class="personview">
         <h1>{{ person.firstname }} {{ person.lastname }} {% if person.nickname %}{{ person.nickname }}{% endif %}</a><h1>
         <span class="title">{{ person.title }}</span>
@@ -16,3 +23,7 @@
         {% endif %}
         <p>{{ person.description }}</p>
 </div>
+
+{% placeholder "content" %}
+
+{% endblock %}

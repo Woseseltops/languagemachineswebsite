@@ -1,4 +1,10 @@
-<div class="personview">
+{% extends "base.html" %}
+{% load cms_tags menu_tags sekizai_tags %}
+
+{% block title %}{% page_attribute 'title' %}{% endblock title %}
+
+{% block content %}
+<div class="softwareview">
         <h1>{{ software.name }}<h1>
         {% if software.website %}
         <span class="item"><label>Website:</label> <a href="{{ software.website }}">{{ software.website }}</a></span>
@@ -14,3 +20,4 @@
         {% endif %}
         <p>{{ software.description }}</p>
 </div>
+{% endblock %}

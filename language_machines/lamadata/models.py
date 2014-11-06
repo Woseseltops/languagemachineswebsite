@@ -50,6 +50,7 @@ class Software(models.Model):
         verbose_name_plural = "Software"
 
 class ProjectCategory(models.Model):
+    id = models.CharField("ID", help_text="ID, all lowercase and alphanumeric only, no spaces, will appear in URL like this",max_length=100, primary_key=True)
     name = models.CharField("Category name", max_length=200)
 
     class Meta:

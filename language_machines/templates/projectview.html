@@ -1,3 +1,9 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags sekizai_tags %}
+
+{% block title %}{% page_attribute 'title' %}{% endblock title %}
+
+{% block content %}
 <div class="projectview">
         <h1>{{ project.name }}<h1>
         <span class="sponsor">{{ project.sponsor }}</span>
@@ -6,3 +12,4 @@
         {% endif %}
         <p>{{ project.description }}</p>
 </div>
+{% endblock %}
