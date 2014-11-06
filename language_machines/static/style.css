@@ -144,3 +144,8 @@ div.item span.title {
     font-size: 80%;
     margin-left: 10px;
 }
+div.imagespace {
+    width: 120px;
+    height: 160px;
+    float: left;
+}

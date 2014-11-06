@@ -1,6 +1,7 @@
 from django.db import models
 from cms.models.fields import PlaceholderField
 from publications.models import Publication
+import random
 
 PERSON_FUNCTIONS = { 'head':'Department head','phd':'PhD Candidate','postdoc':'Postdoc','prof':'Professor','assistantprof':'Assistant Professor','programmer':'Scientific Programmer','intern':'Intern','master':'Master\'s Candidate', 'bachelor':'Bachelor\'s Candidate', 'guest':'Guest Researcher' }
 SOFTWARE_LICENSES = { 'gpl3': 'GNU Public License v3', 'gpl2': 'GNU Public License v2', 'agpl':'GPL Affero Public License v3','lgpl': 'Lesser GNU Public License v3', 'mit': 'MIT License', 'apache':'Apache License v2.0' }
@@ -32,6 +33,9 @@ class Person(models.Model):
 
     def __unicode__(self):
         return self.firstname + " " + self.lastname
+
+    def getrandomlama(self):
+        return "lama" + str(random.randomint(1,6)) + ".jpg"
 
     class Meta:
         ordering = ['firstname','lastname']

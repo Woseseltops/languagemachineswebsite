@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load cms_tags menu_tags sekizai_tags %}
+{% load cms_tags menu_tags sekizai_tags staticfiles %}
 
 {% block title %}{% page_attribute 'title' %}{% endblock title %}
 
@@ -11,6 +11,15 @@
 <div class="index">
 {% for person in persons %}
     <div class="item">
+        {% if person.avatar %}
+        <div class="imagespace">
+            <img src="{{ person.avatar.image.url }}" alt="{{ person }}" title="{{ person }}" height="160" />
+        </div>
+        {% else %}
+        <div class="imagespace">
+            <img src="{{ staticfiles }}/{{ person.getrandomlama }}" alt="{{ person }}" title="{{ person }}" height="160" />
+        </div>
+        {% endif %}
         <h3><a href="{% url 'person' person.id %}">{{ person.firstname }} {{ person.lastname }} {% if person.nickname %}({{ person.nickname }}){% endif %}</a> <span class="title">{{ person.title }}</span></h3>
         <span class="function">{{ person.get_function_display }} {% if person.function2 %}&amp; {{ person.get_function2_display }}{% endif %}</span> <span class="affiliation">{{ person.affiliation }}</span>
         {% if person.email %}
