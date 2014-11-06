@@ -9,13 +9,10 @@ from cms.sitemaps import CMSSitemap
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^admin/publications/publication/import_bibtex/$', 'publications.admin_views.import_bibtex'),
     url(r'^admin/', include(admin.site.urls)),  # NOQA
-    url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap',
-        {'sitemaps': {'cmspages': CMSSitemap}}),
-
+    url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static/'}),
-
-    url(r'publications/^', include('publications.urls')),
     url(r'^', include('cms.urls')),
 )
 

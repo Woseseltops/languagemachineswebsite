@@ -8,7 +8,7 @@
 <div class="personview">
         <h1>{{ person.firstname }} {{ person.lastname }} {% if person.nickname %}{{ person.nickname }}{% endif %}</a><h1>
         <span class="title">{{ person.title }}</span>
-        <span class="function">{{ person.get_function_display() }} {% if person.funcion2 %}{{ person.get_function2_display() }}{% endif %}</span> <span class="affiliation">{{ person.affiliation }}</span>
+        <span class="function">{{ person.get_function_display }} {% if person.funcion2 %}{{ person.get_function2_display }}{% endif %}</span> <span class="affiliation">{{ person.affiliation }}</span>
         {% if person.website %}
         <span class="item"><label>Website:</label> <a href="mailto:{{ person.website }}">{{ person.website }}</a></span>
         {% endif %}
@@ -24,6 +24,6 @@
         <p>{{ person.description }}</p>
 </div>
 
-{% placeholder "content" %}
+{% render_placeholder person.content %}
 
 {% endblock %}

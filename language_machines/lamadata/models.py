@@ -1,5 +1,5 @@
 from django.db import models
-from cms.models.pluginmodel import CMSPlugin
+from cms.models.fields import PlaceholderField
 from publications.models import Publication
 
 PERSON_FUNCTIONS = { 'phd':'PhD Candidate','postdoc':'Postdoc','prof':'Professor','assistantprof':'Assistant Professor','programmer':'Scientific Programmer','intern':'Intern','master':'Master\'s Candidate', 'bachelor':'Bachelor\'s Candidate', 'guest':'Guest Researcher' }
@@ -11,23 +11,27 @@ class Person(models.Model):
     id = models.CharField("ID", help_text="ID, all lowercase and alphanumeric only, no spaces, will appear in URL like this", max_length=100, primary_key=True)
     firstname = models.CharField("First name", max_length=50)
     lastname = models.CharField("Last name", max_length=60)
-    title = models.CharField("Title(s)", max_length=255)
+    title = models.CharField("Title(s)", max_length=255, blank=True)
     nickname = models.CharField("Nickname", max_length=50, blank=True)
-    affiliation = models.CharField("Affiliation", max_length=255)
+    affiliation = models.CharField("Affiliation", max_length=255,blank=True )
     function = models.CharField("Function", max_length=25,choices=PERSON_FUNCTIONS.items())
-    function2 = models.CharField("Secondary function", max_length=25,choices=PERSON_FUNCTIONS.items())
-    interests = models.CharField("Interests", max_length=255)
+    function2 = models.CharField("Secondary function", max_length=25,choices=PERSON_FUNCTIONS.items(), blank=True)
+    interests = models.CharField("Interests", max_length=255,blank=True)
     email = models.CharField("E-mail", max_length=60)
-    website = models.URLField("Website", max_length=60)
-    twitter = models.CharField("Twitter", max_length=60)
-    room = models.CharField("Room", max_length=60)
-    phone = models.CharField("Phone", max_length=60)
-    birth_date = models.DateField()
-    joined_date = models.DateField()
+    website = models.URLField("Website", max_length=60, blank=True)
+    twitter = models.CharField("Twitter", max_length=60, blank=True)
+    room = models.CharField("Room", max_length=60, blank=True)
+    phone = models.CharField("Phone", max_length=60, blank=True)
+    birth_date = models.DateField(blank=True,null=True)
+    joined_date = models.DateField(blank=True,null=True)
     left_date = models.DateField(null=True,blank=True)
-    description = models.TextField("Description",help_text="A short description about the person. For more text, use the dedicated page.")
+    description = models.TextField("Description",help_text="A short description about the person. For more text, use the content field.", blank=True)
     image = models.ImageField("Avatar",upload_to='avatars/', blank=True, null=True)
-    publications = models.ManyToManyField(Publication)
+    publications = models.ManyToManyField(Publication, blank=True)
+    content = PlaceholderField('content')
+
+    def __unicode__(self):
+        return self.firstname + " " + self.lastname
 
 
 
@@ -40,37 +44,47 @@ class Software(models.Model):
     demo = models.URLField("Demo", help_text="Link to the demo URL", blank=True,null=True)
     documentation = models.URLField("Documentation", help_text="Link to where the documentation is hosted",blank=True,null=True)
     license = models.CharField("License",max_length=10, choices=SOFTWARE_LICENSES.items())
-    description = models.TextField("Description",help_text="A short description about the software. For more text, use the dedicated page.")
+    description = models.TextField("Description",help_text="A short description about the software. For more text, use the content field.", blank=True)
     authors = models.ManyToManyField(Person)
-    publications = models.ManyToManyField(Publication)
+    publications = models.ManyToManyField(Publication, blank=True)
     image = models.ImageField("Software Logo", upload_to='softwarelogos/', blank=True, null=True)
+    content = PlaceholderField('content')
 
 
     class Meta:
         verbose_name_plural = "Software"
 
+    def __unicode__(self):
+        return self.name
+
 class ProjectCategory(models.Model):
     id = models.CharField("ID", help_text="ID, all lowercase and alphanumeric only, no spaces, will appear in URL like this",max_length=100, primary_key=True)
     name = models.CharField("Category name", max_length=200)
+    description = models.TextField("Description",help_text="A short description about the category.", blank=True)
 
     class Meta:
         verbose_name = "Project Category"
         verbose_name_plural = "Project Categories"
 
+    def __unicode__(self):
+        return self.name
+
 class Project(models.Model):
     id = models.CharField("ID", help_text="ID, all lowercase and alphanumeric only, no spaces, will appear in URL like this",max_length=100, primary_key=True)
     name = models.CharField("Project name", max_length=100)
-    category = models.ForeignKey(ProjectCategory)
-    start_date = models.DateField()
+    category = models.ForeignKey(ProjectCategory, blank=True)
+    start_date = models.DateField(blank=True)
     end_date = models.DateField(null=True,blank=True)
-    sponsors = models.CharField("Sponsor(s)", max_length=255)
-    twitter = models.CharField("Twitter", max_length=60)
-    description = models.TextField("Description",help_text="A short description about the project. For more text, use the dedicated page.")
-    members = models.ManyToManyField(Person)
-    software = models.ManyToManyField(Software)
-    publications = models.ManyToManyField(Publication)
+    sponsors = models.CharField("Sponsor(s)", max_length=255, blank=True)
+    twitter = models.CharField("Twitter", max_length=60, blank=True)
+    description = models.TextField("Description",help_text="A short description about the project. For more text, use the content field.", blank=True)
+    members = models.ManyToManyField(Person, blank=True)
+    software = models.ManyToManyField(Software, blank=True)
+    publications = models.ManyToManyField(Publication, blank=True)
     image = models.ImageField("Project logo", upload_to='projectlogos/', blank=True, null=True)
+    content = PlaceholderField('content')
 
 
-
+    def __unicode__(self):
+        return self.name
 

@@ -8,10 +8,11 @@
 <h1>Software</h1>
 
 {% placeholder "content" %}
-<div class="sofwareindex">
+
+<div class="softwareindex">
 {% for sofware in softwares %}
     <div class="software">
-        <h3><a href="{% url 'software' software.id %}">{{ software.name }}</a></h3>
+        <h3><a href="{% url 'softwareview' software.id %}">{{ software.name }}</a></h3>
         <p>{{ software.description }}</p>
     </div>
 {% endfor %}

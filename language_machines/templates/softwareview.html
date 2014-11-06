@@ -20,4 +20,7 @@
         {% endif %}
         <p>{{ software.description }}</p>
 </div>
+
+{% render_placeholder software.content %}
+
 {% endblock %}
