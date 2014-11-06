@@ -50,11 +50,7 @@ WSGI_APPLICATION = 'language_machines.wsgi.application'
 
 LANGUAGE_CODE = 'en'
 
-<<<<<<< HEAD
-TIME_ZONE = 'America/Chicago'
-=======
 TIME_ZONE = 'Europe/Amsterdam'
->>>>>>> 00648dea5e255827e3ad5e1108864dfda6f32951
 
 USE_I18N = True
 
@@ -71,16 +67,9 @@ MEDIA_URL = '/languagemachines/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-<<<<<<< HEAD
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'language_machines', 'static'),
-    '/scratch2/www/languagemachineswebsite/language_machines/static'
-=======
-
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'language_machines', 'static'),
->>>>>>> 00648dea5e255827e3ad5e1108864dfda6f32951
 )
 
 STATICFILES_FINDERS = (
