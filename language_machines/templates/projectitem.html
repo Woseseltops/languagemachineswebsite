@@ -13,13 +13,14 @@
     <h3><a href="{% url 'project' project.id %}">{{ project.name }}</a></h3>
     <span class="sponsor">{{ project.sponsor }}</span>
 
+    <span class="field"><em>{% if project.start_date %}{{ project.start_date|date }} -{% endif %}- {% if project.end_date %}{{ project.end_date|date }}{% endif %}</em></span>
     {% if project.website %}
     <span class="field"><a href="{{ project.website }}">{{ project.website }}</a></span>
     {% endif %}
     {% if project.members %}
     <span class="field"><label>Members: </label>
     {% for member in project.members.all %}
-    <a href="{% url 'person' member.id %}">{{ member }}</a> &nbsp;  
+    <a href="{% url 'person' member.id %}">{{ member }}</a> {% if not forloop.last %}, {% endif %}
     {% endfor %}
     </span>
     {% endif %}

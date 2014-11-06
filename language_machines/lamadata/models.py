@@ -2,6 +2,7 @@ from django.db import models
 from cms.models.fields import PlaceholderField
 from publications.models import Publication
 from django.conf import settings
+from datetime import datetime
 import random
 
 PERSON_FUNCTIONS = { 'head':'Department head','phd':'PhD Candidate','postdoc':'Postdoc','prof':'Professor','assistantprof':'Assistant Professor','programmer':'Scientific Programmer','intern':'Intern','master':'Master\'s Candidate', 'bachelor':'Bachelor\'s Candidate', 'guest':'Guest Researcher','sysadmin':'System Administrator' }
@@ -44,8 +45,11 @@ class Person(models.Model):
     def initialsname(self):
         return self.firstname[0] + ". " + self.lastname
 
+    def former(self):
+        return self.left_date and  self.left_date < datetime.now()
+
     class Meta:
-        ordering = ['firstname','lastname']
+        ordering = ['joined_date', 'firstname', 'lastname']
 
 class Software(models.Model):
     id = models.CharField("ID", help_text="ID, all lowercase and alphanumeric only, no spaces, will appear in URL like this",max_length=100, primary_key=True)

@@ -4,15 +4,60 @@
 {% block title %}{% page_attribute 'title' %}{% endblock title %}
 
 {% block content %}
-<div class="projectview">
-        <h1>{{ project.name }}<h1>
-        <span class="sponsor">{{ project.sponsor }}</span>
+<div class="view">
+        {% if software.image %}
+        <div class="imagespaceright">
+            <img src="{{ software.image.image.url }}" alt="{{ software }}" title="{{ software }}" width="120" height="160" />
+        </div>
+        {% endif %}
+        <h1>{{ project.name }}</h1>
+        <div class="topfields">
+            <span class="sponsor">{{ project.sponsor }}</span>
+            <span class="function">by 
+            {% for member in project.members.all %}
+                <a href="{% url 'person' member.id %}">{{ member }}</a> {% if not forloop.last %}, {% endif %}
+            {% endfor %}
+            </span>
+        </div>
         {% if project.website %}
-        <span class="item"><a href="{{ project.website }}">{{ project.website }}</a></span>
+        <span class="field"><label>Website:</label> <a href="{{ project.website }}">{{ project.website }}</a></span>
+        {% endif %}
+        {% if project.start_date %}
+        <span class="field"><label>Start date:</label> {{ project.start_date|date }}</span>
+        {% endif %}
+        {% if project.end_date %}
+        <span class="field"><label>End date:</label> {{ project.end_date|date }}</span>
         {% endif %}
         <p>{{ project.description }}</p>
 </div>
 
 {% render_placeholder project.content %}
+
+{% if project.publications.all %}
+<h2>Publications</h2>
+
+<p>The following publications regarding this project have been published:</p>
+
+<div class="publicationindex">
+{% for publication in project.publications.all %}
+    <div{% if not forloop.last %} style="margin-bottom: 20px;"{% endif %}>
+        {% include "publications/publication.html" %}
+    </div>
+{% endfor %}
+</div>
+
+{% endif %}
+
+{% if project.software.all %}
+<h2>Software</h2>
+
+<p>The following software was used or developed in the scope of this project:</p>
+
+<div class="index">
+{% for software in project.software.all %}
+    {% include 'softwareitem.html' %}
+{% endfor %}
+</div>
+{% endif %}
 
 {% endblock %}
