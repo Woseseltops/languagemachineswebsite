@@ -5,6 +5,7 @@ from django.contrib import admin
 from django.conf import settings
 from cms.sitemaps import CMSSitemap
 
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -14,6 +15,7 @@ urlpatterns = patterns('',
 
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static/'}),
 
+    url(r'^', include('language_machines.lamadata.urls')),
     url(r'^', include('cms.urls')),
 )
 

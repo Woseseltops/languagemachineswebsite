@@ -8,6 +8,7 @@ SOFTWARE_LICENSES = { 'gpl3': 'GNU Public License v3', 'gpl2': 'GNU Public Licen
 
 
 class Person(models.Model):
+    id = models.CharField("ID", help_text="ID, all lowercase and alphanumeric only, no spaces, will appear in URL like this", max_length=100, primary_key=True)
     firstname = models.CharField("First name", max_length=50)
     lastname = models.CharField("Last name", max_length=60)
     title = models.CharField("Title(s)", max_length=255)
@@ -34,6 +35,7 @@ class Person(models.Model):
 
 
 class Software(models.Model):
+    id = models.CharField("ID", help_text="ID, all lowercase and alphanumeric only, no spaces, will appear in URL like this",max_length=100, primary_key=True)
     name = models.CharField("Name", max_length=100)
     Website = models.URLField("Website", help_text="Link to the software's dedicated website", blank=True,null=True)
     source = models.URLField("Source code", help_text="Link to source code repository or download", blank=True,null=True)
@@ -60,6 +62,7 @@ class ProjectCategory(models.Model):
         verbose_name_plural = "Project Categories"
 
 class Project(models.Model):
+    id = models.CharField("ID", help_text="ID, all lowercase and alphanumeric only, no spaces, will appear in URL like this",max_length=100, primary_key=True)
     name = models.CharField("Project name", max_length=100)
     category = models.ForeignKey(ProjectCategory)
     start_date = models.DateField()
@@ -75,16 +78,5 @@ class Project(models.Model):
     def getslug(self):
         return self.name.replace(" ", "-")
 
-class PersonView(CMSPlugin):
-    person = models.ForeignKey(Person)
-
-class SoftwareView(CMSPlugin):
-    software = models.ForeignKey(Software)
-
-class ProjectView(CMSPlugin):
-    project = models.ForeignKey(Project)
-
-class SoftwareIndex(CMSPlugin):
-    viewtype = models.CharField(max_length=1, choices=( ('all',"All"), ("webservices",'Webservices'), ('demos','Demos') ) )
 
 
