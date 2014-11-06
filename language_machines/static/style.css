@@ -148,4 +148,13 @@ div.imagespace {
     width: 120px;
     height: 160px;
     float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+div.imagespacesmall {
+    width: 60px;
+    height: 80px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 5px;
 }

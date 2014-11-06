@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load cms_tags menu_tags sekizai_tags %}
+{% load cms_tags menu_tags sekizai_tags staticfiles %}
 
 {% block title %}{% page_attribute 'title' %}{% endblock title %}
 
@@ -12,6 +12,15 @@
 <div class="index">
 {% for software in softwares %}
     <div class="item">
+        {% if project.image %}
+        <div class="imagespacesmall">
+            <img src="{{ project.image.image.url }}" alt="{{ project }}" title="{{ project }}" width="60" height="80" />
+        </div>
+        {% else %}
+        <div class="imagespacesmall">
+            <img src="{% static 'lama-logo-soft.png' %}" alt="{{ project }}" title="{{ project }}" width="60" height="80" />
+        </div>
+        {% endif %}
         <h3><a href="{% url 'softwareview' software.id %}">{{ software.name }}</a></h3>
         {% if software.authors %}
         <span class="field">by 

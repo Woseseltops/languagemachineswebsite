@@ -1,17 +1,26 @@
 {% extends "base.html" %}
-{% load cms_tags menu_tags sekizai_tags %}
+{% load cms_tags menu_tags sekizai_tags staticfiles %}
 
 {% block title %}{% page_attribute 'title' %}{% endblock title %}
 
 {% block content %}
 
-<h1>Projects</h1>
+<h1>Research Projects</h1>
 
 {% placeholder "content" %}
 
 <div class="index">
 {% for project in projects %}
     <div class="item">
+        {% if project.image %}
+        <div class="imagespacesmall">
+            <img src="{{ project.image.image.url }}" alt="{{ project }}" title="{{ project }}" width="60" height="80" />
+        </div>
+        {% else %}
+        <div class="imagespacesmall">
+            <img src="{% static 'lama-logo-soft.png' %}" alt="{{ project }}" title="{{ project }}" width="60" height="80" />
+        </div>
+        {% endif %}
         <h3><a href="{% url 'project' project.id %}">{{ project.name }}</a></h3>
         <span class="sponsor">{{ project.sponsor }}</span>
 
@@ -26,6 +35,7 @@
         </span>
         {% endif %}
         <p>{{ project.description }}</p>
+        <div style="clear: both"></div>
     </div>
 {% endfor %}
 </div>

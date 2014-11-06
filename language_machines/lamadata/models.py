@@ -1,6 +1,7 @@
 from django.db import models
 from cms.models.fields import PlaceholderField
 from publications.models import Publication
+from django.conf import settings
 import random
 
 PERSON_FUNCTIONS = { 'head':'Department head','phd':'PhD Candidate','postdoc':'Postdoc','prof':'Professor','assistantprof':'Assistant Professor','programmer':'Scientific Programmer','intern':'Intern','master':'Master\'s Candidate', 'bachelor':'Bachelor\'s Candidate', 'guest':'Guest Researcher' }
@@ -27,7 +28,7 @@ class Person(models.Model):
     joined_date = models.DateField(blank=True,null=True)
     left_date = models.DateField(null=True,blank=True)
     description = models.TextField("Description",help_text="A short description about the person. For more text, use the content field.", blank=True)
-    image = models.ImageField("Avatar",upload_to='avatars/', blank=True, null=True)
+    image = models.ImageField("Avatar",help_text="A 120x160 picture of the person, if not specified, you will be punished and a random llama will be shown.", upload_to='avatars/', blank=True, null=True)
     publications = models.ManyToManyField(Publication, blank=True)
     content = PlaceholderField('content')
 
@@ -35,7 +36,7 @@ class Person(models.Model):
         return self.firstname + " " + self.lastname
 
     def getrandomlama(self):
-        return "lama" + str(random.randint(1,6)) + ".jpg"
+        return settings.STATIC_URL +"/lama" + str(random.randint(1,6)) + ".jpg"
 
     class Meta:
         ordering = ['firstname','lastname']
