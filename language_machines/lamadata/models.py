@@ -96,8 +96,8 @@ class Project(models.Model):
     description = models.TextField("Description",help_text="A short description about the project. For more text, use the content field.", blank=True)
     members = models.ManyToManyField(Person, blank=True)
     software = models.ManyToManyField(Software, blank=True)
-    publications = models.ManyToManyField(Publication, blank=True)
-    image = models.ImageField("Project logo", upload_to='projectlogos/', blank=True, null=True)
+    publications = models.ManyToManyField(Publication, help_text="It is not necessary to explicitly add publications here, they will be automatically found!", blank=True)
+    image = models.ImageField("Project logo", help_text="120x160px", upload_to='projectlogos/', blank=True, null=True)
     content = PlaceholderField('content')
 
 
