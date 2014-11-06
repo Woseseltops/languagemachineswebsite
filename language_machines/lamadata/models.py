@@ -2,7 +2,7 @@ from django.db import models
 from cms.models.fields import PlaceholderField
 from publications.models import Publication
 
-PERSON_FUNCTIONS = { 'phd':'PhD Candidate','postdoc':'Postdoc','prof':'Professor','assistantprof':'Assistant Professor','programmer':'Scientific Programmer','intern':'Intern','master':'Master\'s Candidate', 'bachelor':'Bachelor\'s Candidate', 'guest':'Guest Researcher' }
+PERSON_FUNCTIONS = { 'head':'Department head','phd':'PhD Candidate','postdoc':'Postdoc','prof':'Professor','assistantprof':'Assistant Professor','programmer':'Scientific Programmer','intern':'Intern','master':'Master\'s Candidate', 'bachelor':'Bachelor\'s Candidate', 'guest':'Guest Researcher' }
 SOFTWARE_LICENSES = { 'gpl3': 'GNU Public License v3', 'gpl2': 'GNU Public License v2', 'agpl':'GPL Affero Public License v3','lgpl': 'Lesser GNU Public License v3', 'mit': 'MIT License', 'apache':'Apache License v2.0' }
 
 
@@ -14,8 +14,8 @@ class Person(models.Model):
     title = models.CharField("Title(s)", max_length=255, blank=True)
     nickname = models.CharField("Nickname", max_length=50, blank=True)
     affiliation = models.CharField("Affiliation", max_length=255,blank=True )
-    function = models.CharField("Function", max_length=25,choices=PERSON_FUNCTIONS.items())
-    function2 = models.CharField("Secondary function", max_length=25,choices=PERSON_FUNCTIONS.items(), blank=True)
+    function = models.CharField("Function", max_length=25,choices=sorted(PERSON_FUNCTIONS.items(), key= lambda x: x[1]))
+    function2 = models.CharField("Secondary function", max_length=25,choices=sorted(PERSON_FUNCTIONS.items(), key=lambda x:x[1]), blank=True)
     interests = models.CharField("Interests", max_length=255,blank=True)
     email = models.CharField("E-mail", max_length=60)
     website = models.URLField("Website", max_length=60, blank=True)
@@ -33,17 +33,18 @@ class Person(models.Model):
     def __unicode__(self):
         return self.firstname + " " + self.lastname
 
-
+    class Meta:
+        ordering = ['firstname','lastname']
 
 class Software(models.Model):
     id = models.CharField("ID", help_text="ID, all lowercase and alphanumeric only, no spaces, will appear in URL like this",max_length=100, primary_key=True)
     name = models.CharField("Name", max_length=100)
-    Website = models.URLField("Website", help_text="Link to the software's dedicated website", blank=True,null=True)
+    website = models.URLField("Website", help_text="Link to the software's dedicated website", blank=True,null=True)
     source = models.URLField("Source code", help_text="Link to source code repository or download", blank=True,null=True)
     webservice = models.URLField("Webservice", help_text="Link to Webservice URL", blank=True, null=True)
     demo = models.URLField("Demo", help_text="Link to the demo URL", blank=True,null=True)
     documentation = models.URLField("Documentation", help_text="Link to where the documentation is hosted",blank=True,null=True)
-    license = models.CharField("License",max_length=10, choices=SOFTWARE_LICENSES.items())
+    license = models.CharField("License",max_length=10, choices=sorted(SOFTWARE_LICENSES.items(), key=lambda x: x[1]) )
     description = models.TextField("Description",help_text="A short description about the software. For more text, use the content field.", blank=True)
     authors = models.ManyToManyField(Person)
     publications = models.ManyToManyField(Publication, blank=True)
@@ -53,9 +54,11 @@ class Software(models.Model):
 
     class Meta:
         verbose_name_plural = "Software"
+        ordering = ['name']
 
     def __unicode__(self):
         return self.name
+
 
 class ProjectCategory(models.Model):
     id = models.CharField("ID", help_text="ID, all lowercase and alphanumeric only, no spaces, will appear in URL like this",max_length=100, primary_key=True)
@@ -65,6 +68,8 @@ class ProjectCategory(models.Model):
     class Meta:
         verbose_name = "Project Category"
         verbose_name_plural = "Project Categories"
+        ordering = ['name']
+
 
     def __unicode__(self):
         return self.name
@@ -88,3 +93,5 @@ class Project(models.Model):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        ordering = ['name']

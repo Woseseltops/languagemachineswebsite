@@ -9,13 +9,21 @@
 
 {% placeholder "content" %}
 
-<div class="projectindex">
+<div class="index">
 {% for project in projects %}
-    <div class="project">
-        <h3><a href="{% url 'project' project.id %}">{{ project.name }}</a></span></h3>
+    <div class="item">
+        <h3><a href="{% url 'project' project.id %}">{{ project.name }}</a></h3>
         <span class="sponsor">{{ project.sponsor }}</span>
+
         {% if project.website %}
-        <span class="item"><a href="{{ project.website }}">{{ project.website }}</a></span>
+        <span class="field"><a href="{{ project.website }}">{{ project.website }}</a></span>
+        {% endif %}
+        {% if project.members %}
+        <span class="field"><label>Members: </label>
+        {% for member in project.members.all %}
+        <a href="{% url 'person' member.id %}">{{ member }}</a> &nbsp;  
+        {% endfor %}
+        </span>
         {% endif %}
         <p>{{ project.description }}</p>
     </div>

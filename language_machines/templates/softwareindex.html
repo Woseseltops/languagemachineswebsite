@@ -9,10 +9,22 @@
 
 {% placeholder "content" %}
 
-<div class="softwareindex">
-{% for sofware in softwares %}
-    <div class="software">
+<div class="index">
+{% for software in softwares %}
+    <div class="item">
         <h3><a href="{% url 'softwareview' software.id %}">{{ software.name }}</a></h3>
+        {% if software.authors %}
+        <span class="field">by 
+        {% for author in software.authors.all %}
+        <a href="{% url 'person' author.id %}">{{ author }}</a> &nbsp;  
+        {% endfor %}
+        </span>
+        {% endif %}
+        {% if software.website %}
+        <span class="field"><a href="{{ software.website }}">{{ software.website }}</a></span>
+        {% elif software.source %}
+        <span class="field"><a href="{{ software.source }}">{{ software.source }}</a></span>
+        {% endif %}
         <p>{{ software.description }}</p>
     </div>
 {% endfor %}

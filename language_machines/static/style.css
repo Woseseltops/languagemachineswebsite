@@ -108,4 +108,39 @@ h1 {
 	border-bottom: 1px solid #BE311A; /* Radboud red */
 	font-size: 35px;
 	padding-bottom: 10px;
+
+}
+
+
+div.index {
+}
+
+span.function {
+    display: block;
+    font-style: italic;
+}
+span.affiliation, span.sponsor {
+    display: block;
+    font-variant: small-caps;
+}
+
+div.index div.item span.field {
+    display: block;
+}
+
+div.index div.item {
+	border-bottom: 1px solid #BE311A; /* Radboud red */
+    padding-left: 20px;
+}
+div.index div.item h3 {
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+div.index div.item h3:hover {
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+div.item span.title {
+    font-size: 80%;
+    margin-left: 10px;
 }

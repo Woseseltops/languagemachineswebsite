@@ -8,13 +8,13 @@
 
 {% placeholder "content" %}
 
-<div class="personindex">
+<div class="index">
 {% for person in persons %}
-    <div class="person">
-        <h3><a href="{% url 'person' person.id %}">{{ person.firstname }} {{ person.lastname }} {% if person.nickname %}{{ person.nickname }}{% endif %}</a> <span class="title">{{ person.title }}</span></h3>
-        <span class="function">{{ person.get_function_display }} {% if person.function2 %}{{ person.get_function2_display }}{% endif %}</span> <span class="affiliation">{{ person.affiliation }}</span>
+    <div class="item">
+        <h3><a href="{% url 'person' person.id %}">{{ person.firstname }} {{ person.lastname }} {% if person.nickname %}({{ person.nickname }}){% endif %}</a> <span class="title">{{ person.title }}</span></h3>
+        <span class="function">{{ person.get_function_display }} {% if person.function2 %}&amp; {{ person.get_function2_display }}{% endif %}</span> <span class="affiliation">{{ person.affiliation }}</span>
         {% if person.email %}
-        <span class="item"><a href="mailto:{{ person.email }}">{{ person.email }}</a></span>
+        <span class="field"><a href="mailto:{{ person.email }}">{{ person.email }}</a></span>
         {% endif %}
         <p>{{ person.description }}</p>
     </div>
