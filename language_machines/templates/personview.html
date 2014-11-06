@@ -6,25 +6,88 @@
 {% block content %}
 
 <div class="view">
+        {% if person.image %}
+        <div class="imagespaceright">
+            <img src="{{ person.image.image.url }}" alt="{{ person }}" title="{{ person }}" width="120" height="160" />
+        </div>
+        {% else %}
+        <div class="imagespaceright">
+            <img src="{{ person.getrandomlama }}" alt="{{ person }}" title="{{ person }}" height="160" />
+        </div>
+        {% endif %}
         <h1>{{ person.firstname }} {{ person.lastname }} {% if person.nickname %}({{ person.nickname }}){% endif %}
         <span class="title">{{ person.title }}</span>
         </h1>
+        <div class="topfields">
         <span class="function">{{ person.get_function_display }} {% if person.function2 %}&amp; {{ person.get_function2_display }}{% endif %}</span> <span class="affiliation">{{ person.affiliation }}</span>
-        {% if person.website %}
-        <span class="field"><label>Website:</label> <a href="mailto:{{ person.website }}">{{ person.website }}</a></span>
+        {% if person.joined_date %}
+        <span class="date">since {{ person.joined_date|date }}</span>
         {% endif %}
-        {% if person.twitter %}
-        <span class="field"><label>Twitter:</label> <a href="mailto:{{ person.twitter }}">{{ person.twitter }}</a></span>
+        {% if person.left_date %}
+        <span class="date"><strong>former member</strong>, until {{ person.left_date|date }}</span>
+        {% endif %}
+        </div>
+
+
+        {% if person.room %}
+        <span class="field"><label>Room:</label> {{ person.room }}</span>
+        {% endif %}
+        {% if person.phone %}
+        <span class="field"><label>Phone:</label> {{ person.phone }}</span>
         {% endif %}
         {% if person.email %}
         <span class="field"><label>E-mail:</label> <a href="mailto:{{ person.email }}">{{ person.email }}</a></span>
         {% endif %}
-        {% if person.room %}
-        <span class="field"><label>Room:</label> {{ person.room }}</span>
+        {% if person.website %}
+        <span class="field"><label>Website:</label> <a href="{{ person.website }}">{{ person.website }}</a></span>
         {% endif %}
+        {% if person.twitter %}
+        <span class="field"><label>Twitter:</label><a href="https://twitter.com/{{ person.twitter }}">{{ person.twitter }}</a></span>
+        {% endif %}
+
+        {% if person.interests %}
+        <span class="field"><label>Interests:</label> {{ person.interests }}</span>
+        {% endif %}
+
+
         <p>{{ person.description }}</p>
 </div>
 
 {% render_placeholder person.content %}
+
+
+{% if projects %}
+<h2>Research Projects</h2>
+
+<div class="index">
+{% for project in projects %}
+    {% include 'projectitem.html' %}
+{% endfor %}
+</div>
+
+{% endif %}
+
+{% if publications %}
+<h2>Publications</h2>
+
+<div class="publicationindex">
+{% for publication in publications %}
+    <div{% if not forloop.last %} style="margin-bottom: 20px;"{% endif %}>
+        {% include "publications/publication.html" %}
+    </div>
+{% endfor %}
+</div>
+
+{% endif %}
+
+{% if softwares %}
+<h2>Software</h2>
+
+<div class="index">
+{% for software in softwares %}
+    {% include 'softwareitem.html' %}
+{% endfor %}
+</div>
+{% endif %}
 
 {% endblock %}

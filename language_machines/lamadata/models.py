@@ -4,7 +4,7 @@ from publications.models import Publication
 from django.conf import settings
 import random
 
-PERSON_FUNCTIONS = { 'head':'Department head','phd':'PhD Candidate','postdoc':'Postdoc','prof':'Professor','assistantprof':'Assistant Professor','programmer':'Scientific Programmer','intern':'Intern','master':'Master\'s Candidate', 'bachelor':'Bachelor\'s Candidate', 'guest':'Guest Researcher' }
+PERSON_FUNCTIONS = { 'head':'Department head','phd':'PhD Candidate','postdoc':'Postdoc','prof':'Professor','assistantprof':'Assistant Professor','programmer':'Scientific Programmer','intern':'Intern','master':'Master\'s Candidate', 'bachelor':'Bachelor\'s Candidate', 'guest':'Guest Researcher','sysadmin':'System Administrator' }
 SOFTWARE_LICENSES = { 'gpl3': 'GNU Public License v3', 'gpl2': 'GNU Public License v2', 'agpl':'GPL Affero Public License v3','lgpl': 'Lesser GNU Public License v3', 'mit': 'MIT License', 'apache':'Apache License v2.0' }
 
 
@@ -33,10 +33,16 @@ class Person(models.Model):
     content = PlaceholderField('content')
 
     def __unicode__(self):
-        return self.firstname + " " + self.lastname
+        return self.fullname()
 
     def getrandomlama(self):
         return settings.STATIC_URL +"/lama" + str(random.randint(1,6)) + ".jpg"
+
+    def fullname(self):
+        return self.firstname + " " + self.lastname
+
+    def initialsname(self):
+        return self.firstname[0] + ". " + self.lastname
 
     class Meta:
         ordering = ['firstname','lastname']

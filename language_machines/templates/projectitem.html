@@ -1,0 +1,28 @@
+{% load cms_tags menu_tags sekizai_tags staticfiles %}
+
+<div class="item">
+    {% if project.image %}
+    <div class="imagespacesmall">
+        <img src="{{ project.image.image.url }}" alt="{{ project }}" title="{{ project }}" width="60" height="80" />
+    </div>
+    {% else %}
+    <div class="imagespacesmall">
+        <img src="{% static 'lama-logo-soft.png' %}" alt="{{ project }}" title="{{ project }}" width="60" height="80" />
+    </div>
+    {% endif %}
+    <h3><a href="{% url 'project' project.id %}">{{ project.name }}</a></h3>
+    <span class="sponsor">{{ project.sponsor }}</span>
+
+    {% if project.website %}
+    <span class="field"><a href="{{ project.website }}">{{ project.website }}</a></span>
+    {% endif %}
+    {% if project.members %}
+    <span class="field"><label>Members: </label>
+    {% for member in project.members.all %}
+    <a href="{% url 'person' member.id %}">{{ member }}</a> &nbsp;  
+    {% endfor %}
+    </span>
+    {% endif %}
+    <p>{{ project.description }}</p>
+    <div style="clear: both"></div>
+</div>

@@ -111,6 +111,12 @@ h1 {
 
 }
 
+h2 {
+	font-weight: normal;
+	border-bottom: 1px solid #BE311A; /* Radboud red */
+	font-size: 25px;
+	padding-bottom: 10px;
+}
 
 div.index {
 }
@@ -129,7 +135,7 @@ div.index div.item span.field {
 }
 
 div.index div.item {
-	border-bottom: 1px solid #BE311A; /* Radboud red */
+	border-bottom: 1px solid #aaa; 
     padding-left: 20px;
 }
 div.index div.item h3 {
@@ -151,6 +157,11 @@ div.imagespace {
     margin-right: 10px;
     margin-bottom: 10px;
 }
+div.imagespaceright {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
 div.imagespacesmall {
     width: 60px;
     height: 80px;
@@ -164,9 +175,11 @@ h1 span.title {
     font-style: italic;
     padding-left: 40px;
 }
+div.topfields {
+    margin-bottom: 20px;
+}
 div.view span.function {
     display: block;
-    margin-bottom: 20px;
 }
 div.view span.field {
     display: block;
@@ -174,4 +187,24 @@ div.view span.field {
 }
 div.view span.field label {
     font-weight: bold;
+}
+div.imagespace img, div.imagespaceright img {
+    border-radius: 25px;
+}
+div.view span.date {
+    display: block;
+    width: 100%;
+    text-align: right;
+    font-size: 90%;
+    font-style: italic;
+}
+span.date strong {
+    color: red;
+}
+
+div.publicationindex {
+    padding-left: 80px;
+}
+div.publicationindex>div {
+	border-bottom: 1px solid #aaa; 
 }
