@@ -15,7 +15,6 @@ urlpatterns = patterns('',
 
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static/'}),
 
-    url(r'^', include('language_machines.lamadata.urls')),
     url(r'publications/^', include('publications.urls')),
     url(r'^', include('cms.urls')),
 )
