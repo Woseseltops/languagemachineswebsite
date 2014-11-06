@@ -1,0 +1,21 @@
+{% load cms_tags menu_tags sekizai_tags %}
+
+<div class="item">
+        {% if person.image %}
+        <div class="imagespace">
+            <img src="{{ person.image.image.url }}" alt="{{ person }}" title="{{ person }}" width="120" height="160" />
+        </div>
+        {% else %}
+        <div class="imagespace">
+            <img src="{{ person.getrandomlama }}" alt="{{ person }}" title="{{ person }}" height="160" />
+        </div>
+        {% endif %}
+        <h3><a href="{% url 'person' person.id %}">{{ person.firstname }} {{ person.lastname }} {% if person.nickname %}({{ person.nickname }}){% endif %}</a> <span class="title">{{ person.title }}</span></h3>
+        <span class="function">{{ person.get_function_display }} {% if person.function2 %}&amp; {{ person.get_function2_display }}{% endif %}</span>
+        <span class="affiliation">{{ person.affiliation }}</span>
+        {% if person.email %}
+        <span class="field"><a href="mailto:{{ person.email }}">{{ person.email }}</a></span>
+        {% endif %}
+        <p>{{ person.description }}</p>
+        <div style="clear: both"></div>
+</div>
