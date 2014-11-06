@@ -1,0 +1,27 @@
+{% load cms_tags menu_tags sekizai_tags staticfiles %}
+
+<div class="item">
+    {% if project.image %}
+    <div class="imagespacesmall">
+        <img src="{{ project.image.image.url }}" alt="{{ project }}" title="{{ project }}" width="60" height="80" />
+    </div>
+    {% else %}
+    <div class="imagespacesmall">
+        <img src="{% static 'lama-logo-soft.png' %}" alt="{{ project }}" title="{{ project }}" width="60" height="80" />
+    </div>
+    {% endif %}
+    <h3><a href="{% url 'softwareview' software.id %}">{{ software.name }}</a></h3>
+    {% if software.authors %}
+    <span class="field">by 
+    {% for author in software.authors.all %}
+    <a href="{% url 'person' author.id %}">{{ author }}</a> &nbsp;  
+    {% endfor %}
+    </span>
+    {% endif %}
+    {% if software.website %}
+    <span class="field"><a href="{{ software.website }}">{{ software.website }}</a></span>
+    {% elif software.source %}
+    <span class="field"><a href="{{ software.source }}">{{ software.source }}</a></span>
+    {% endif %}
+    <p>{{ software.description }}</p>
+</div>
