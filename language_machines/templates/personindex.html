@@ -1,8 +1,18 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags sekizai_tags %}
+
+{% block title %}{% page_attribute 'title' %}{% endblock title %}
+
+{% block content %}
+<h1>Team</h1>
+
+{% placeholder "content" %}
+
 <div class="personindex">
 {% for person in persons %}
     <div class="person">
-        <h3><a href="{{ person.getslug() }}">{{ person.firstname }} {{ person.lastname }} {% if person.nickname %}{{ person.nickname }}{% endif %}</a> <span class="title">{{ person.title }}</span></h3>
-        <span class="function">{{ person.get_function_display() }} {% if person.function2 %}{{ person.get_function2_display() }}{% endif %}</span> <span class="affiliation">{{ person.affiliation }}</span>
+        <h3><a href="{% url 'person' person.id %}">{{ person.firstname }} {{ person.lastname }} {% if person.nickname %}{{ person.nickname }}{% endif %}</a> <span class="title">{{ person.title }}</span></h3>
+        <span class="function">{{ person.get_function_display }} {% if person.function2 %}{{ person.get_function2_display }}{% endif %}</span> <span class="affiliation">{{ person.affiliation }}</span>
         {% if person.email %}
         <span class="item"><a href="mailto:{{ person.email }}">{{ person.email }}</a></span>
         {% endif %}
@@ -10,3 +20,5 @@
     </div>
 {% endfor %}
 </div>
+{% endblock content %}
+

@@ -29,9 +29,6 @@ class Person(models.Model):
     image = models.ImageField("Avatar",upload_to='avatars/', blank=True, null=True)
     publications = models.ManyToManyField(Publication)
 
-    def getslug(self):
-        fullname = self.firstname + " " + self.lastname
-        return fullname.replace(" ", "-")
 
 
 class Software(models.Model):
@@ -48,8 +45,6 @@ class Software(models.Model):
     publications = models.ManyToManyField(Publication)
     image = models.ImageField("Software Logo", upload_to='softwarelogos/', blank=True, null=True)
 
-    def getslug(self):
-        return self.name.replace(" ", "-")
 
     class Meta:
         verbose_name_plural = "Software"
@@ -75,8 +70,6 @@ class Project(models.Model):
     publications = models.ManyToManyField(Publication)
     image = models.ImageField("Project logo", upload_to='projectlogos/', blank=True, null=True)
 
-    def getslug(self):
-        return self.name.replace(" ", "-")
 
 
 
