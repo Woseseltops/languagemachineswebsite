@@ -158,3 +158,20 @@ div.imagespacesmall {
     margin-right: 10px;
     margin-bottom: 5px;
 }
+h1 span.title {
+    font-size: 80%;
+    color: black;
+    font-style: italic;
+    padding-left: 40px;
+}
+div.view span.function {
+    display: block;
+    margin-bottom: 20px;
+}
+div.view span.field {
+    display: block;
+    margin-top: 3px;
+}
+div.view span.field label {
+    font-weight: bold;
+}

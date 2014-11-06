@@ -5,21 +5,22 @@
 
 {% block content %}
 
-<div class="personview">
-        <h1>{{ person.firstname }} {{ person.lastname }} {% if person.nickname %}{{ person.nickname }}{% endif %}</a><h1>
+<div class="view">
+        <h1>{{ person.firstname }} {{ person.lastname }} {% if person.nickname %}({{ person.nickname }}){% endif %}
         <span class="title">{{ person.title }}</span>
-        <span class="function">{{ person.get_function_display }} {% if person.funcion2 %}{{ person.get_function2_display }}{% endif %}</span> <span class="affiliation">{{ person.affiliation }}</span>
+        </h1>
+        <span class="function">{{ person.get_function_display }} {% if person.function2 %}&amp; {{ person.get_function2_display }}{% endif %}</span> <span class="affiliation">{{ person.affiliation }}</span>
         {% if person.website %}
-        <span class="item"><label>Website:</label> <a href="mailto:{{ person.website }}">{{ person.website }}</a></span>
+        <span class="field"><label>Website:</label> <a href="mailto:{{ person.website }}">{{ person.website }}</a></span>
         {% endif %}
         {% if person.twitter %}
-        <span class="item"><label>Twitter:</label> <a href="mailto:{{ person.twitter }}">{{ person.twitter }}</a></span>
+        <span class="field"><label>Twitter:</label> <a href="mailto:{{ person.twitter }}">{{ person.twitter }}</a></span>
         {% endif %}
         {% if person.email %}
-        <span class="item"><label>E-mail:</label> <a href="mailto:{{ person.email }}">{{ person.email }}</a></span>
+        <span class="field"><label>E-mail:</label> <a href="mailto:{{ person.email }}">{{ person.email }}</a></span>
         {% endif %}
         {% if person.room %}
-        <span class="item"><label>Room:</label> {{ person.room }}</span>
+        <span class="field"><label>Room:</label> {{ person.room }}</span>
         {% endif %}
         <p>{{ person.description }}</p>
 </div>
