@@ -1,0 +1,8 @@
+<div class="sofwareindex">
+{% for app in software %}
+    <div class="software">
+        <h3><a href="{{ app.getslug() }}">{{ app.name }}</a></h3>
+        <p>{{ app.description }}</p>
+    </div>
+{% endfor %}
+</div>
