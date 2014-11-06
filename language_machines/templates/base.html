@@ -29,7 +29,7 @@
       </div>
       <div id="footer">
         {% if user.is_authenticated %}
-        <span class="login">Logged in as {{ user.username }}  <a href="{% url 'logout' %}">[logout]</a> <a href="/admin/">[admin]</a></span>
+        <span class="login">Logged in as {{ user.username }}  <a href="{% url 'logout' %}">[logout]</a> <a href="{% url 'admin:index' %}">[admin]</a></span>
         {% else %}
         <span class="login"><a href="{% url 'login' %}">[login]</a></span>
         {% endif %}           
