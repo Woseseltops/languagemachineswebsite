@@ -1,8 +1,20 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags sekizai_tags %}
+
+{% block title %}{% page_attribute 'title' %}{% endblock title %}
+
+{% block content %}
+
+<h1>Software</h1>
+
+{% placeholder "content" %}
 <div class="sofwareindex">
-{% for app in software %}
+{% for sofware in softwares %}
     <div class="software">
-        <h3><a href="{{ app.getslug() }}">{{ app.name }}</a></h3>
-        <p>{{ app.description }}</p>
+        <h3><a href="{% url 'software' software.id %}">{{ software.name }}</a></h3>
+        <p>{{ software.description }}</p>
     </div>
 {% endfor %}
 </div>
+
+{% endblock content %}

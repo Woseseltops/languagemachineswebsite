@@ -14,6 +14,11 @@ class SoftwareAppHook(CMSApp):
     name = _("Software")
     urls = ["language_machines.lamadata.software_urls"]
 
+class PublicationAppHook(CMSApp):
+    name = _("Publication")
+    urls = ["publications.urls"]
+
 apphook_pool.register(PersonAppHook)
 apphook_pool.register(ProjectAppHook)
-apphook_pool.register(PersonAppHook)
+apphook_pool.register(SoftwareAppHook)
+apphook_pool.register(PublicationAppHook)

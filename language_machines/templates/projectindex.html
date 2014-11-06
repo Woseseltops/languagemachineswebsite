@@ -1,7 +1,18 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags sekizai_tags %}
+
+{% block title %}{% page_attribute 'title' %}{% endblock title %}
+
+{% block content %}
+
+<h1>Projects</h1>
+
+{% placeholder "content" %}
+
 <div class="projectindex">
 {% for project in projects %}
     <div class="project">
-        <h3><a href="{{ project.getslug() }}">{{ project.name }}</a></span></h3>
+        <h3><a href="{% url 'project' project.id %}">{{ project.name }}</a></span></h3>
         <span class="sponsor">{{ project.sponsor }}</span>
         {% if project.website %}
         <span class="item"><a href="{{ project.website }}">{{ project.website }}</a></span>
@@ -10,3 +21,5 @@
     </div>
 {% endfor %}
 </div>
+
+{% endblock content %}
