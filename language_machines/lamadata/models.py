@@ -35,7 +35,7 @@ class Person(models.Model):
         return self.firstname + " " + self.lastname
 
     def getrandomlama(self):
-        return "lama" + str(random.randomint(1,6)) + ".jpg"
+        return "lama" + str(random.randint(1,6)) + ".jpg"
 
     class Meta:
         ordering = ['firstname','lastname']
