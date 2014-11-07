@@ -17,6 +17,9 @@
             {% for member in project.members.all %}
                 <a href="{% url 'person' member.id %}">{{ member }}</a> {% if not forloop.last %}, {% endif %}
             {% endfor %}
+            {% if project.externalmembers %}
+            , {{ project.externalmembers }}
+            {% endif %}
             </span>
         </div>
         {% if project.website %}

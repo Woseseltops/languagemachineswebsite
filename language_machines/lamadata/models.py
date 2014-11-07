@@ -62,9 +62,11 @@ class Software(models.Model):
     license = models.CharField("License",max_length=10, choices=sorted(SOFTWARE_LICENSES.items(), key=lambda x: x[1]) )
     description = models.TextField("Description",help_text="A short description about the software. For more text, use the content field.", blank=True)
     authors = models.ManyToManyField(Person)
+    externalauthors = models.CharField("External authors", help_text="Add any external authors (which are not in the system)",blank=True, null=True)
     publications = models.ManyToManyField(Publication, blank=True)
     image = models.ImageField("Software Logo", upload_to='softwarelogos/', blank=True, null=True)
     content = PlaceholderField('content')
+    release_date = models.DateField(blank=True,null=True)
 
 
     class Meta:
@@ -99,6 +101,7 @@ class Project(models.Model):
     twitter = models.CharField("Twitter", max_length=60, blank=True)
     description = models.TextField("Description",help_text="A short description about the project. For more text, use the content field.", blank=True)
     members = models.ManyToManyField(Person, blank=True)
+    externalmembers = models.CharField("External members", help_text="Add any external members (which are not in the system)",blank=True, null=True)
     software = models.ManyToManyField(Software, blank=True)
     publications = models.ManyToManyField(Publication, help_text="It is not necessary to explicitly add publications here, they will be automatically found!", blank=True)
     image = models.ImageField("Project logo", help_text="120x160px", upload_to='projectlogos/', blank=True, null=True)

@@ -11,12 +11,15 @@
         </div>
         {% endif %}
         <h1>{{ software.name }}</h1>
-        {% if software.authors %}
+        {% if software.authors or software.externalauthors %}
         <div class="topfields">
         <span class="function">by 
         {% for author in software.authors.all %}
-        <a href="{% url 'person' author.id %}">{{ author }}</a> &nbsp;  
+        <a href="{% url 'person' author.id %}">{{ author }}</a> {% if not forloop.last %}, {% endif %}
         {% endfor %}
+        {% if software.externalauthors %}
+        , {{ sofware.externalauthors }}
+        {% endif %}
         </span>
         </div>
         {% endif %}

@@ -17,11 +17,14 @@
     {% if project.website %}
     <span class="field"><a href="{{ project.website }}">{{ project.website }}</a></span>
     {% endif %}
-    {% if project.members %}
+    {% if project.members or project.externalmembers %}
     <span class="field"><label>Members: </label>
     {% for member in project.members.all %}
     <a href="{% url 'person' member.id %}">{{ member }}</a> {% if not forloop.last %}, {% endif %}
     {% endfor %}
+    {% if project.externalmembers %}
+    , {{ project.externalmembers }}
+    {% endif %}
     </span>
     {% endif %}
     <p>{{ project.description }}</p>
