@@ -1,13 +1,13 @@
 {% load cms_tags menu_tags sekizai_tags staticfiles %}
 
 <div class="item">
-    {% if project.image %}
+    {% if software.image %}
     <div class="imagespacesmall">
-        <img src="{{ project.image.url }}" alt="{{ project }}" title="{{ project }}" width="60" height="80" />
+        <img src="{{ software.image.url }}" alt="{{ software }}" title="{{ software }}" width="60" height="80" />
     </div>
     {% else %}
     <div class="imagespacesmall">
-        <img src="{% static 'lama-logo-soft.png' %}" alt="{{ project }}" title="{{ project }}" width="60" height="80" />
+        <img src="{% static 'lama-logo-soft.png' %}" alt="{{ software }}" title="{{ software }}" width="60" height="80" />
     </div>
     {% endif %}
     <h3><a href="{% url 'softwareview' software.id %}">{{ software.name }}</a></h3>
