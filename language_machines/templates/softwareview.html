@@ -18,7 +18,7 @@
         <a href="{% url 'person' author.id %}">{{ author }}</a> {% if not forloop.last %}, {% endif %}
         {% endfor %}
         {% if software.externalauthors %}
-        , {{ sofware.externalauthors }}
+        , {{ software.externalauthors }}
         {% endif %}
         </span>
         </div>
