@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags sekizai_tags staticfiles %}
+
+{% block title %}{{ projectcategory.name }}{% endblock title %}
+
+{% block content %}
+
+<h1>{{ projectcategory.name }}</h1>
+
+{{ projectcategory.description }}
+
+{% placeholder "content" %}
+
+<h1>Research Projects</h1>
+
+<div class="index">
+{% for project in projects %}
+    {% include 'projectitem.html' %}
+{% endfor %}
+</div>
+
+<h1>Publications</h1>
+
+<div class="publicationindex">
+{% for project in projects %}
+{% for publication in project.publications.all %}
+    <div{% if not forloop.last %} style="margin-bottom: 20px;"{% endif %}>
+        {% include "publications/publication.html" %}
+    </div>
+{% endfor %}
+{% endfor %}
+</div>
+
+<h1>Software &amp; Demos</h1>
+
+<div class="index">
+{% for project in projects %}
+{% for software in project.software.all %}
+    {% include 'softwareitem.html' %}
+{% endfor %}
+{% endfor %}
+</div>
+
+{% endblock content %}

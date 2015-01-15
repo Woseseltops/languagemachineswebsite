@@ -1,6 +1,7 @@
 {% load cms_tags menu_tags sekizai_tags %}
 
 <div class="item">
+        {% if not person.left_date %}
         {% if person.image %}
         <div class="imagespace">
             <img src="{{ person.image.url }}" alt="{{ person }}" title="{{ person }}" width="120" height="160" />
@@ -9,6 +10,9 @@
         <div class="imagespace">
             <img src="{{ person.getrandomlama }}" alt="{{ person }}" title="{{ person }}" height="160" />
         </div>
+        {% endif %}
+        {% else %}
+        <div class="imagespace"></div>
         {% endif %}
         <h3><a href="{% url 'person' person.id %}">{{ person.firstname }} {{ person.lastname }} {% if person.nickname %}({{ person.nickname }}){% endif %}</a> <span class="title">{{ person.title }}</span></h3>
         <span class="function">{{ person.get_function_display }} {% if person.function2 %}&amp; {{ person.get_function2_display }}{% endif %}</span>

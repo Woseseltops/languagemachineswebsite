@@ -10,7 +10,7 @@
 
 <div class="index">
 {% for person in persons %}
-    {% if not person.former %}
+    {% if not person.left_date %}
         {% include 'personitem.html' %}
     {% endif %}
 {% endfor %}
@@ -20,10 +20,8 @@
 
 <div class="index">
 {% for person in persons %}
-    {% if person.former %}
-    <div class="item">
+    {% if person.left_date %}
         {% include 'personitem.html' %}
-    </div>
     {% endif %}
 {% endfor %}
 </div>

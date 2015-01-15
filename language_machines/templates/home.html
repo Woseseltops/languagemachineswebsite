@@ -2,8 +2,18 @@
 {% load cms_tags menu_tags sekizai_tags twitter_tag cache %}
 
 {% block content %}
+
+{% placeholder "content" %}
+
+<div id="tweetfeed">
 {% cache 60 tweetfeed %}
 {% search_tweets for "languagemachines" as tweets exclude "retweets" limit 5 %}
 {% endcache %}
-{% endblock %}
+</div>
 
+<ul id="projectcategories">
+{% for projectcategory in projectcategories %}
+    <li><a href="{% url 'projectcategory' projectcategory.id %}">{{ projectcategory.name}}</a>  - {{ projectcategory.description }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

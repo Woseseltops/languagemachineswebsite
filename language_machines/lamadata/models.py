@@ -45,9 +45,6 @@ class Person(models.Model):
     def initialsname(self):
         return self.firstname[0] + ". " + self.lastname
 
-    def former(self):
-        return self.left_date and  self.left_date < datetime.now()
-
     class Meta:
         ordering = ['joined_date', 'firstname', 'lastname']
 
@@ -67,6 +64,7 @@ class Software(models.Model):
     image = models.ImageField("Software Logo", upload_to='softwarelogos/', blank=True, null=True)
     content = PlaceholderField('content')
     release_date = models.DateField(blank=True,null=True)
+    category = models.ManyToManyField(ProjectCategory, blank=True)
 
 
     class Meta:

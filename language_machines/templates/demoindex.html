@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags sekizai_tags staticfiles %}
+
+{% block title %}{% page_attribute 'title' %}{% endblock title %}
+
+{% block content %}
+
+<h1>Demos</h1>
+
+{% placeholder "content" %}
+
+<div class="index">
+{% for software in softwares %}
+    {% if software.demo %}
+        {% include 'softwareitem.html' %}
+    {% endif %}
+{% endfor %}
+</div>
+
+{% endblock content %}
