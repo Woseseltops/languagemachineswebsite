@@ -94,6 +94,7 @@ class ProjectCategory(models.Model):
 class Project(models.Model):
     id = models.CharField("ID", help_text="ID, all lowercase and alphanumeric only, no spaces, will appear in URL like this",max_length=100, primary_key=True)
     name = models.CharField("Project name", max_length=100)
+    website = models.URLField("Website", help_text="Link to the project's dedicated website", blank=True,null=True)
     category = models.ManyToManyField(ProjectCategory, blank=True)
     start_date = models.DateField(blank=True)
     end_date = models.DateField(null=True,blank=True)
