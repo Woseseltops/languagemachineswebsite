@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags sekizai_tags twitter_tag cache %}
+
+{% block content %}
+{% cache 60 tweetfeed %}
+{% search_tweets for "languagemachines" as tweets exclude "retweets" limit 5 %}
+{% endcache %}
+{% endblock %}
+

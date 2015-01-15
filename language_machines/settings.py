@@ -19,6 +19,15 @@ BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = open(BASE_DIR + '/.secret.key','r').read().strip()
+# Your access token: Access token
+TWITTER_OAUTH_TOKEN = open(BASEDIR+'/.twitter_oauth_token','r').read().strip()
+# Your access token: Access token secret
+TWITTER_OAUTH_SECRET = open(BASEDIR+'/.twitter_oauth_secret','r').read().strip()
+# OAuth settings: Consumer key
+TWITTER_CONSUMER_KEY = open(BASEDIR+'/.twitter_consumer_key','r').read().strip()
+# OAuth settings: Consumer secret
+TWITTER_CONSUMER_SECRET = open(BASEDIR+'/.twitter_consumer_secret','r').read().strip()
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -146,6 +155,7 @@ INSTALLED_APPS = (
     'reversion',
     'language_machines',
     'publications',
+    'twitter-tag',
     'language_machines.lamadata'
 )
 
