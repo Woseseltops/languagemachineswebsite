@@ -11,7 +11,12 @@
 
 <div id="tweetfeed">
 {% cache 900 tweetfeed %}
-{% search_tweets for "languagemachines" as tweets limit 5 %}
+{% search_tweets for "#languagemachines" as tweets limit 5 %}
+<ul>
+    {% for tweet in tweets %}
+        <li>{{ tweet.html|safe }}</li>
+    {% endfor %}
+</ul>
 {% endcache %}
 </div>
 
