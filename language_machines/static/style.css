@@ -218,13 +218,19 @@ span.login {
     font-size: 90%;
     margin-top: 3px;
 }
+#tweetfeed li {
+    margin-bottom: 15px;
+}
 #tweetfeed li span.username {
+    display: inline-block;
     font-size: 80%;
     font-style: italic;
     color: #666;
+    padding-right: 20px;
 }
 #tweetfeed li span.date {
-    font-size: 80%;
+    display: inline-block;
+    font-size: 70%;
     font-family: monospace;
     color: #666;
 }
