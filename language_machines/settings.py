@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-
+HOSTNAME = os.uname()[1]
+if HOSTNAME == 'applejack':
+    BASE_URL = 'http://applejack.science.ru.nl/languagemachines'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -119,7 +121,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'sekizai.context_processors.sekizai',
     'django.core.context_processors.static',
-    'cms.context_processors.cms_settings'
+    'cms.context_processors.cms_settings',
+    'language_machines.context_processors.baseurl'
 )
 
 TEMPLATE_DIRS = (
