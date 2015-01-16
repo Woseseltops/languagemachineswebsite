@@ -9,6 +9,8 @@
 
 {% placeholder "content" %}
 
+<h2>Latest News</h3>
+
 <div id="tweetfeed">
 {% cache 900 tweetfeed %}
 {% search_tweets for "#languagemachines" as tweets limit 5 %}
