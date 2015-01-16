@@ -16,7 +16,7 @@ class SoftwareAppHook(CMSApp):
 
 class HomeAppHook(CMSApp):
     name = _("Home")
-    url = ["language_machines.lamadata.home_urls"]
+    urls = ["language_machines.lamadata.home_urls"]
 
 class PublicationAppHook(CMSApp):
     name = _("Publication")

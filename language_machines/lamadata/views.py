@@ -2,7 +2,7 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
-from language_machines.lamadata.models import Person, Software, Project
+from language_machines.lamadata.models import Person, Software, Project, ProjectCategory
 from publications.models import Publication
 from django.db.models import Q
 

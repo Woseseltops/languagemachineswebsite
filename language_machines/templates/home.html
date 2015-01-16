@@ -13,7 +13,7 @@
 
 <ul id="projectcategories">
 {% for projectcategory in projectcategories %}
-    <li><a href="{% url 'projectcategory' projectcategory.id %}">{{ projectcategory.name}}</a>  - {{ projectcategory.description }}</li>
+    <li><a href="{% url 'projectcategory' projectcategory.id %}">{{ projectcategory.name }}</a>  - {{ projectcategory.description }}</li>
 {% endfor %}
 </ul>
 {% endblock %}
