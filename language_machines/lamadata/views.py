@@ -19,6 +19,9 @@ def home(request):
 def softwareindex(request):
     return render_to_response('softwareindex.html', {'softwares': Software.objects.order_by('name')}, context_instance=RequestContext(request) )
 
+def demoindex(request):
+    return render_to_response('demoindex.html', {'softwares': Software.objects.order_by('name')}, context_instance=RequestContext(request) )
+
 def personview(request, person_id):
     person = Person.objects.get(pk=person_id)
     softwares = Software.objects.filter(authors__id=person_id)
