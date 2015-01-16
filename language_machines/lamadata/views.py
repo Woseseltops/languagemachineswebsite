@@ -34,10 +34,11 @@ def projectview(request, project_id):
 
 def projectcategoryview(request, projectcategory_id):
     if projectcategory_id:
-        projects = Project.objects.filter(category__id=projectcategory_id)
-        publications = Publication.objects.filter(project__category__id=projectcategory_id)
-        softwares = Software.objects.filter(project__category__id=projectcategory_id)
-        return render_to_response('projectcategoryview.html', {'projectcategory': ProjectCategory.objects.get(pk=projectcategory_id), 'publications': publications, 'softwares': softwares}, context_instance=RequestContext(request) )
+        projectcategory = ProjectCategory.objects.get(pk=projectcategory_id)
+        projects = Project.objects.filter(category=projectcategory)
+        publications = Publication.objects.filter(project__category=projectcategory).distinct()
+        softwares = Software.objects.filter(project__category=projectcategory).distinct()
+        return render_to_response('projectcategoryview.html', {'projectcategory': projectcategory, 'publications': publications, 'softwares': softwares}, context_instance=RequestContext(request) )
     else:
         return home(request)
 

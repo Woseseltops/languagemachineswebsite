@@ -20,22 +20,18 @@
 <h2>Publications</h2>
 
 <div class="publicationindex">
-{% for project in projects %}
-{% for publication in project.publications.all %}
+{% for publication in publications %}
     <div{% if not forloop.last %} style="margin-bottom: 20px;"{% endif %}>
         {% include "publications/publication.html" %}
     </div>
-{% endfor %}
 {% endfor %}
 </div>
 
 <h2>Software &amp; Demos</h2>
 
 <div class="index">
-{% for project in projects %}
-{% for software in project.software.all %}
+{% for software in softwares %}
     {% include 'softwareitem.html' %}
-{% endfor %}
 {% endfor %}
 </div>
 
