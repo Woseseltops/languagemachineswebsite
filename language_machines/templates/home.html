@@ -7,7 +7,7 @@
 
 <div id="tweetfeed">
 {% cache 900 tweetfeed %}
-{% search_tweets for "languagemachines" as tweets exclude "retweets" limit 5 %}
+{% search_tweets for "languagemachines" as tweets limit 5 %}
 {% endcache %}
 </div>
 

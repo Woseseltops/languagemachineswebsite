@@ -13,6 +13,9 @@ def personindex(request):
 def projectindex(request):
     return render_to_response('projectindex.html', {'projects': Project.objects.order_by('name')}, context_instance=RequestContext(request) )
 
+def home(request):
+    return render_to_response('home.html', {'projectcategories': ProjectCategory.objects.order_by('name')}, context_instance=RequestContext(request) )
+
 def softwareindex(request):
     return render_to_response('softwareindex.html', {'softwares': Software.objects.order_by('name')}, context_instance=RequestContext(request) )
 
