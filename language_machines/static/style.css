@@ -64,6 +64,9 @@ body {
     width: 340px;
     height: 113px;
 }
+#groupphoto {
+    text-align: center;
+}
 
 #menu {
 	background-color: black;
@@ -215,3 +218,4 @@ span.login {
     font-size: 90%;
     margin-top: 3px;
 }
+

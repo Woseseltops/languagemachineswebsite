@@ -1,7 +1,11 @@
 {% extends "base.html" %}
-{% load cms_tags menu_tags sekizai_tags twitter_tag cache %}
+{% load cms_tags menu_tags sekizai_tags twitter_tag cache static %}
 
 {% block content %}
+
+<div id="groupphoto">
+<img src="{% static 'groupphoto.jpg' %}" alt="Language Machines Team" title="Language Machines Team" width="640" />
+</div>
 
 {% placeholder "content" %}
 
@@ -11,9 +15,13 @@
 {% endcache %}
 </div>
 
+
+<h2>Areas of research &amp; expertise</h2>
+
 <ul id="projectcategories">
 {% for projectcategory in projectcategories %}
-    <li><a href="{% url 'projectcategory' projectcategory.id %}">{{ projectcategory.name }}</a>  - {{ projectcategory.description }}</li>
+<li><a href="{{ BASE_URL }}/categories/{{ projectcategory.id }}">{{ projectcategory.name }}</a>  - {{ projectcategory.description }}</li>
 {% endfor %}
 </ul>
+
 {% endblock %}
