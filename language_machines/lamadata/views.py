@@ -26,6 +26,12 @@ def personview(request, person_id):
 def projectview(request, project_id):
     return render_to_response('projectview.html', {'project': Project.objects.get(pk=project_id)}, context_instance=RequestContext(request) )
 
+def projectcategoryview(request, projectcategory_id):
+    projects = Project.objects.filter(category__id=projectcategory_id)
+    publications = Publication.objects.filter(project__category__id=projectcategory_id)
+    softwares = Software.objects.filter(project__category__id=projectcategory_id)
+    return render_to_response('projectcategoryview.html', {'projectcategory': ProjectCategory.objects.get(pk=projectcategory_id), 'publications': publications, 'softwares': softwares}, context_instance=RequestContext(request) )
+
 def softwareview(request, software_id):
     projects = Project.objects.filter(software__id=software_id)
     return render_to_response('softwareview.html', {'software': Software.objects.get(pk=software_id), 'projects': projects}, context_instance=RequestContext(request) )

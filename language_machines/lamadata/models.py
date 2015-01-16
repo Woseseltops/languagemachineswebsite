@@ -48,6 +48,20 @@ class Person(models.Model):
     class Meta:
         ordering = ['joined_date', 'firstname', 'lastname']
 
+class ProjectCategory(models.Model):
+    id = models.CharField("ID", help_text="ID, all lowercase and alphanumeric only, no spaces, will appear in URL like this",max_length=100, primary_key=True)
+    name = models.CharField("Category name", max_length=200)
+    description = models.TextField("Description",help_text="A short description about the category.", blank=True)
+
+    class Meta:
+        verbose_name = "Project Category"
+        verbose_name_plural = "Project Categories"
+        ordering = ['name']
+
+
+    def __unicode__(self):
+        return self.name
+
 class Software(models.Model):
     id = models.CharField("ID", help_text="ID, all lowercase and alphanumeric only, no spaces, will appear in URL like this",max_length=100, primary_key=True)
     name = models.CharField("Name", max_length=100)
@@ -75,19 +89,6 @@ class Software(models.Model):
         return self.name
 
 
-class ProjectCategory(models.Model):
-    id = models.CharField("ID", help_text="ID, all lowercase and alphanumeric only, no spaces, will appear in URL like this",max_length=100, primary_key=True)
-    name = models.CharField("Category name", max_length=200)
-    description = models.TextField("Description",help_text="A short description about the category.", blank=True)
-
-    class Meta:
-        verbose_name = "Project Category"
-        verbose_name_plural = "Project Categories"
-        ordering = ['name']
-
-
-    def __unicode__(self):
-        return self.name
 
 class Project(models.Model):
     id = models.CharField("ID", help_text="ID, all lowercase and alphanumeric only, no spaces, will appear in URL like this",max_length=100, primary_key=True)
