@@ -16,7 +16,7 @@
 {% search_tweets for "#languagemachines" as tweets limit 5 %}
 <ul>
     {% for tweet in tweets %}
-    <li>&lt;<a href="http://twitter.com/{{ tweet.user.name }}">{{ tweet.user.name }}</a>&gt; {{ tweet.html|safe }}</li>
+    <li><span class="username"><a href="http://twitter.com/{{ tweet.user.screen_name }}">{{ tweet.user.name }}</a></span> <span class="date">{{ tweet.created_at }}</span><br /> {{ tweet.html|safe }}</li>
     {% endfor %}
 </ul>
 {% endcache %}
