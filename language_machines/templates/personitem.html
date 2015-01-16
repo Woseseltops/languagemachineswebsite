@@ -11,8 +11,6 @@
             <img src="{{ person.getrandomlama }}" alt="{{ person }}" title="{{ person }}" height="160" />
         </div>
         {% endif %}
-        {% else %}
-        <div class="imagespace"></div>
         {% endif %}
         <h3><a href="{% url 'person' person.id %}">{{ person.firstname }} {{ person.lastname }} {% if person.nickname %}({{ person.nickname }}){% endif %}</a> <span class="title">{{ person.title }}</span></h3>
         <span class="function">{{ person.get_function_display }} {% if person.function2 %}&amp; {{ person.get_function2_display }}{% endif %}</span>
