@@ -15,6 +15,8 @@ BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 HOSTNAME = os.uname()[1]
 if HOSTNAME == 'applejack':
     BASE_URL = 'http://applejack.science.ru.nl/languagemachines'
+else:
+    BASE_URL = ''
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
