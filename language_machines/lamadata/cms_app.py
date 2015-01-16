@@ -30,5 +30,6 @@ class PublicationAppHook(CMSApp):
 apphook_pool.register(PersonAppHook)
 apphook_pool.register(ProjectAppHook)
 apphook_pool.register(SoftwareAppHook)
+apphook_pool.register(DemoAppHook)
 apphook_pool.register(HomeAppHook)
 apphook_pool.register(PublicationAppHook)
