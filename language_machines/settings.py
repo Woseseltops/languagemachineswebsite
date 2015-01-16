@@ -197,3 +197,19 @@ DATABASES = {
     'default':
         {'ENGINE': 'django.db.backends.sqlite3', 'NAME': os.path.join(BASE_DIR,'../project.db'), 'HOST': 'localhost', 'USER': '', 'PASSWORD': '', 'PORT': '', 'AUTOCOMMIT': True, 'ATOMIC_REQUESTS': True}
 }
+
+
+#Memcached:
+#CACHES = {
+#    'default': {
+#        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+#        'LOCATION': '127.0.0.1:11211',
+#    }
+#}
+
+#dummy cache (doesn't cache)
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
