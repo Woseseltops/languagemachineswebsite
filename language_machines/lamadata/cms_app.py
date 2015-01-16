@@ -14,6 +14,10 @@ class SoftwareAppHook(CMSApp):
     name = _("Software")
     urls = ["language_machines.lamadata.software_urls"]
 
+class DemoAppHook(CMSApp):
+    name = _("Demos")
+    urls = ["language_machines.lamadata.software_urls"]
+
 class HomeAppHook(CMSApp):
     name = _("Home")
     urls = ["language_machines.lamadata.home_urls"]
