@@ -37,7 +37,7 @@ def projectcategoryview(request, projectcategory_id):
         projectcategory = ProjectCategory.objects.get(pk=projectcategory_id)
         projects = projectcategory.project_set.all()
         publications = Publication.objects.filter(project__category=projectcategory).distinct()
-        softwares = Software.objects.filter(project__category=projectcategory).distinct()
+        softwares = Software.objects.filter(Q(project__category=projectcategory) | Q(category=projectcategory)).distinct()
         return render_to_response('projectcategoryview.html', {'projectcategory': projectcategory, 'projects': projects, 'publications': publications, 'softwares': softwares}, context_instance=RequestContext(request) )
     else:
         return home(request)
