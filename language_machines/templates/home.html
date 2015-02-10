@@ -13,15 +13,20 @@
 
 <div id="tweetfeed">
 {% cache 900 tweetfeed %}
-{% search_tweets for "#languagemachines" as tweets limit 5 %}
+{% search_tweets for "#languagemachines" as tweets limit 10 %}
 <ul>
     {% for tweet in tweets %}
+    {% if not tweet.retweeted_status %}
     <li><span class="username"><a href="http://twitter.com/{{ tweet.user.screen_name }}">{{ tweet.user.name }}</a></span> <span class="date">{{ tweet.created_at }}</span><br /> {{ tweet.html|safe }}</li>
+    {% endif %}
     {% endfor %}
 </ul>
 {% endcache %}
 </div>
 
+<p style="align: center">
+(<a href="https://twitter.com/search?f=realtime&q=%23languagemachines&src=typd">view more</a>)
+</p>
 
 <h2>Areas of research &amp; expertise</h2>
 
