@@ -17,7 +17,7 @@
 <ul>
     {% for tweet in tweets %}
     {% if not tweet.retweeted_status %}
-    <li><span class="username"><a href="http://twitter.com/{{ tweet.user.screen_name }}">{{ tweet.user.name }}</a></span> <span class="date">{{ tweet.created_at }}</span><br /> {{ tweet|expand_tweet_urls|urlize_tweet_text|safe }}</li>
+    <li><span class="username"><a href="http://twitter.com/{{ tweet.user.screen_name }}">{{ tweet.user.name }}</a></span> <span class="date">{{ tweet.created_at }}</span><br /> {{ tweet.html|safe }}</li>
     {% endif %}
     {% endfor %}
 </ul>
