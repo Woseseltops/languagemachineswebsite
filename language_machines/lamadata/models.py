@@ -5,7 +5,7 @@ from django.conf import settings
 from datetime import datetime
 import random
 
-PERSON_FUNCTIONS = { 'head':'Principal Investigator','phd':'PhD Candidate','postdoc':'Postdoc','prof':'Professor','assistantprof':'Assistant Professor','programmer':'Scientific Programmer','intern':'Intern','master':'Master\'s Candidate', 'bachelor':'Bachelor\'s Candidate', 'guest':'Guest Researcher','sysadmin':'System Administrator' }
+PERSON_FUNCTIONS = { 'head':'Principal Investigator','phd':'PhD Candidate','postdoc':'Postdoc','prof':'Professor','assistantprof':'Assistant Professor','researcher':'Researcher','programmer':'Scientific Programmer','intern':'Intern','master':'Master\'s Candidate', 'bachelor':'Bachelor\'s Candidate', 'guest':'Guest Researcher','sysadmin':'System Administrator','assistant': 'Student Assistant' }
 SOFTWARE_LICENSES = { 'gpl3': 'GNU Public License v3', 'gpl2': 'GNU Public License v2', 'agpl':'GNU Affero Public License v3','lgpl': 'Lesser GNU Public License v3', 'mit': 'MIT License', 'apache':'Apache License v2.0' }
 
 
