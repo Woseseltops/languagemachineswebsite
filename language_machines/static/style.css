@@ -32,7 +32,7 @@ body {
 
 #header {
     margin-top: 10px;
-	height: 74px;
+	height: 150px;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     padding-top: 10px;
@@ -49,12 +49,13 @@ body {
 }
 
 #logo {
-    background: url('lama-logo-transparent.png');
+    background: url('lama-logo.png');
     background-repeat: no-repeat;
-    background-size: 500px;
-    margin-left: 25px;
-    width: 500px;
-    height: 74px;
+    background-size: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 400px;
 }
 #rulogo {
     float: right;
@@ -63,6 +64,7 @@ body {
     background-size: 320px;
     width: 340px;
     height: 113px;
+    margin-top: 80px;
 }
 #groupphoto {
     text-align: center;
