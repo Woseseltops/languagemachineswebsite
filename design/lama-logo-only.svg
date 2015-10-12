@@ -144,14 +144,5 @@
          id="path4259"
          inkscape:connector-curvature="0" />
     </g>
-    <g
-       id="g4273"
-       transform="matrix(3.5217419,0,0,-3.5217419,544.31237,593.38926)">
-      <path
-         d="m 0,0 c 0,0.432 -0.15,0.821 -0.451,1.168 -0.3,0.347 -0.659,0.52 -1.075,0.52 -0.432,0 -0.79,-0.173 -1.075,-0.52 C -2.887,0.821 -3.029,0.432 -3.029,0 l 0,-6.382 -2.359,0 0,12.348 2.359,1.503 0,-4.347 c 0.524,0.616 1.241,0.924 2.15,0.924 1.434,0 2.428,-0.755 2.983,-2.265 C 2.273,1.303 2.358,0.778 2.358,0.208 l 0,-6.59 L 0,-6.382 0,0 Z"
-         style="fill:none;stroke:#ffffff;stroke-width:0.57800001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         id="path4275"
-         inkscape:connector-curvature="0" />
-    </g>
   </g>
 </svg>
